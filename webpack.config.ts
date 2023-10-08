@@ -1,9 +1,6 @@
-// const path = require('path');
 import path from 'path';
-//const HTMLWebpackPlugin = require('html-webpack-plugin');
 import HTMLWebpackPlugin from 'html-webpack-plugin';
-//const webpack = require("webpack")
-import webpack from 'webpack';
+import webpack from './node_modules/webpack';
 
 const config:webpack.Configuration = {
     mode: 'development',
