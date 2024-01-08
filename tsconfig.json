@@ -8,8 +8,12 @@
     "allowJs": true,
     "moduleResolution": "node",
     // для абсолютного импорта
-    //"baseUrl": ".",
-
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "./src/*"
+      ]
+    },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
