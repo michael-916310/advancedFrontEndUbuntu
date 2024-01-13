@@ -4,6 +4,20 @@ import {BuildOptions} from "./types/config";
 
 export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    };
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -23,7 +37,6 @@ export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
         ],
     };
 
-
     // Если не используем ts, для реакта нужен babel-лоадер
     const typescriptLoader = {
         test: /\.tsx?$/,
@@ -32,6 +45,8 @@ export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
     };
 
     return [
+        fileLoader,
+        svgLoader,
         typescriptLoader,
         cssLoaders
     ]
