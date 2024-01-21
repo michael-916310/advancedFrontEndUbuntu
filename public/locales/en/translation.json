@@ -6,5 +6,7 @@
   "Переключить": " Toggle",
   "Загрузка": "Loading",
   "О сайте": "About",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "Unexpected error happens",
+  "Обновить страницу": "Refresh page"
 }
