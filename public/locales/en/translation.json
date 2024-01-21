@@ -2,5 +2,8 @@
   "Тестовый пример": "test example",
   "Перевод": "translate",
   "Главная страница": "Main page",
-  "Язык": "English"
+  "Язык": "English",
+  "Переключить": " Toggle",
+  "Загрузка": "Loading",
+  "О сайте": "About"
 }
