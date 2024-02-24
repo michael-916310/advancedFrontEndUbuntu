@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
   // Automatically clear mock calls, instances, contexts and results before every test
@@ -20,7 +21,10 @@ const config: Config = {
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
     'node_modules',
+    'src',
   ],
+
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
   // An array of file extensions your modules use
   moduleFileExtensions: [
@@ -36,6 +40,11 @@ const config: Config = {
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
+
+  moduleNameMapper: {
+    '\\.(s?css|less)$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
