@@ -6,6 +6,8 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import App from 'app/App';
 import ErrorBoundary from 'app/providers/ErrorBoundary/ui/ErrorBoundary';
 
+import 'app/styles/index.scss';
+
 const root = createRoot(document.getElementById('root'));
 
 root.render(
