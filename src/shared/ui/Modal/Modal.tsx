@@ -47,7 +47,6 @@ const Modal = ({
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
-    [cls[theme]]: true,
   };
 
   return (
