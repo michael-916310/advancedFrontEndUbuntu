@@ -20,6 +20,7 @@ const Modal = ({
     if (isOpen) {
       setIsMounted(true);
     }
+    return () => setIsMounted(false);
   }, [isOpen]);
 
   const closeHandler = useCallback(() => {
