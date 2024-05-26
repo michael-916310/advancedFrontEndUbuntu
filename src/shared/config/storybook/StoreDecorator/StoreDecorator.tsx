@@ -7,7 +7,7 @@ import { profileReducer } from 'entities/Profile';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer,
-  profilePage: profileReducer,
+  profile: profileReducer,
 };
 
 export const StoreDecorator = (
