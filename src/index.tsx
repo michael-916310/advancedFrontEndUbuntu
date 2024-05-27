@@ -9,6 +9,7 @@ import ErrorBoundary from 'app/providers/ErrorBoundary/ui/ErrorBoundary';
 import 'app/styles/index.scss';
 import { StoreProvider } from 'app/providers/StoreProvider';
 
+// @ts-ignore
 const root = createRoot(document.getElementById('root'));
 
 root.render(

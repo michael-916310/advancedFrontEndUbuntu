@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { createReduxStore } from 'app/providers/StoreProvider/config/store';
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { ReducersMapObject } from '@reduxjs/toolkit';
-import { DeepPartial } from 'shared/types';
 import { useNavigate } from 'react-router-dom';
+import { DeepPartial } from 'app/types/types';
 
 interface StoreProvideProps {
   children?: ReactNode;

@@ -1,5 +1,5 @@
 import { LoginSchema } from 'features/AuthByUsername';
-import { DeepPartial } from 'shared/types';
+import { DeepPartial } from 'app/types/types';
 import { loginActions, loginReducer } from './loginSlice';
 
 describe('loginSlice.test', () => {

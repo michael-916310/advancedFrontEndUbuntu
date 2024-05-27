@@ -1,8 +1,5 @@
 import {
-  combineReducers,
-  Reducer,
-  ReducersMapObject,
-  UnknownAction,
+  combineReducers, Reducer, ReducersMapObject, UnknownAction,
 } from '@reduxjs/toolkit';
 import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema';
 
@@ -19,13 +16,14 @@ export function createReducerManager(
     reduce: (state: StateSchema, action: UnknownAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state };
-        // eslint-disable-next-line
-        for (const key of keysToRemove) {
+
+        keysToRemove.forEach((key: StateSchemaKey) => {
           delete state[key];
-        }
+        });
         keysToRemove = [];
       }
 
+      // @ts-ignore
       return combinedReducer(state, action);
     },
 

@@ -5,10 +5,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import React, { memo, useCallback } from 'react';
-import {
-  DynamicModuleLoader,
-  ReducerList,
-} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
@@ -23,8 +20,8 @@ const initialReducer: ReducerList = {
 };
 
 export interface LoginFormProps {
-  className?: string;
-  onSuccess: () => void;
+    className?: string;
+    onSuccess: () => void;
 }
 
 const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
@@ -53,6 +50,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const onLoginClick = useCallback(async () => {
     // @ts-ignore
     const result = await dispatch(loginByUserName({ username, password }));
+
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
     }
@@ -63,10 +61,10 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
         {error && (
-          <Text
-            theme={TextTheme.ERROR}
-            text={t('Не верный логин или пароль')}
-          />
+        <Text
+          theme={TextTheme.ERROR}
+          text={t('Не верный логин или пароль')}
+        />
         )}
         <Input
           autofocus
