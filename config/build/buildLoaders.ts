@@ -1,6 +1,7 @@
 import type { RuleSetRule } from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
   const svgLoader = {
@@ -8,25 +9,7 @@ export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
     use: ['@svgr/webpack'],
   };
 
-  const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['ru', 'en'],
-              keyAsDefaultValue: true,
-            },
-          ],
-        ],
-      },
-    },
-  };
+  const babelLoader = buildBabelLoader(options);
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -38,24 +21,6 @@ export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
   };
 
   const cssLoaders = buildCssLoader(options.isDev);
-  // const cssLoaders = {
-  //   test: /\.s[ac]ss$/i,
-  //   use: [
-  //     options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-  //     {
-  //       loader: 'css-loader',
-  //       options: {
-  //         modules: {
-  //           auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-  //           localIdentName: options.isDev
-  //             ? '[path][name]__[local]--[hash:base64:5]'
-  //             : '[hash:base64:5]',
-  //         },
-  //       },
-  //     },
-  //     'sass-loader',
-  //   ],
-  // };
 
   // Если не используем ts, для реакта нужен babel-лоадер
   const typescriptLoader = {
