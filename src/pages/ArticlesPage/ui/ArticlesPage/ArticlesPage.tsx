@@ -4,15 +4,13 @@ import { memo } from 'react';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
-    className?: string
+  className?: string;
 }
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
   const { t } = useTranslation();
   return (
-    <div className={classNames(cls.ArticlesPage, {}, [className])}>
-      ARTICLES PAGE
-    </div>
+    <div className={classNames(cls.ArticlesPage, {}, [className])} />
   );
 };
 
