@@ -11,19 +11,7 @@ const initialState: ArticleDetailsSchema = {
 export const articleDetailsSlice = createSlice({
   name: 'articleDetails',
   initialState,
-  reducers: {
-    // setReadOnly: (state: ProfileSchema, action: PayloadAction<boolean>) => {
-    //   state.readonly = action.payload;
-    // },
-    // cancelEdit: (state: ProfileSchema) => {
-    //   state.readonly = true;
-    //   state.form = state.data;
-    //   state.validateError = undefined;
-    // },
-    // updateProfile: (state: ProfileSchema, action: PayloadAction<Profile>) => {
-    //   state.form = { ...state.form, ...action.payload };
-    // },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchArticleById.pending, (state) => {
