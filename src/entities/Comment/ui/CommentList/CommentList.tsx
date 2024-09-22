@@ -6,9 +6,9 @@ import { CommentCard } from '../CommentCard/CommentCard';
 import cls from './CommentList.module.scss';
 
 interface CommentListProps {
-  className?: string;
-  comments?: Comment[];
-  isLoading?: boolean;
+    className?: string;
+    comments?: Comment[];
+    isLoading?: boolean;
 }
 
 const CommentList = ({
@@ -17,6 +17,17 @@ const CommentList = ({
   isLoading,
 }: CommentListProps) => {
   const { t } = useTranslation();
+
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.CommentList, {}, [className])}>
+        <CommentCard className={cls.comment} isLoading />
+        <CommentCard className={cls.comment} isLoading />
+        <CommentCard className={cls.comment} isLoading />
+      </div>
+    );
+  }
+
   return (
     <div className={classNames(cls.CommentList, {}, [className])}>
       {comments?.length

@@ -102,6 +102,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "wqwwqwqw",
+      "id": "bMqd_yU"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "wwww",
+      "id": "YhpXvRm"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "222222",
+      "id": "xAEtoYm"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "3434343 user",
+      "id": "ZEN-2NI"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "привет мир",
+      "id": "tjaoPe5"
     }
   ],
   "users": [
@@ -120,14 +150,28 @@
       "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
     }
   ],
-  "profile": {
-    "first": "Michael",
-    "lastname": "sss",
-    "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Michael",
+      "lastname": "sss",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://s.digitalocean.ru/upload/1686292039_1650919998_d091d18bd181d182d180d0bed0b2_d0a5d0b0d0bad0b5d180.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Michael-2 Enote",
+      "lastname": "sss-2",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow-2",
+      "username": "ulbi tv",
+      "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
+    }
+  ]
 }
