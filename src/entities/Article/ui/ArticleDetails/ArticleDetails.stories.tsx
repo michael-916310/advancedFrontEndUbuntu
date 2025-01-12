@@ -4,7 +4,7 @@ import { Article, ArticleBlockType, ArticleType } from '../../model/types/articl
 import { ArticleDetails } from './ArticleDetails';
 
 const meta = {
-  title: 'entities/ArticleDetails',
+  title: 'entities/Article/ArticleDetails',
   component: ArticleDetails,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -23,6 +23,10 @@ const article: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'michael',
+  },
   type: [
     ArticleType.IT,
   ],

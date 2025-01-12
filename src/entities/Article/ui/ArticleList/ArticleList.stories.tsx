@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleDetailsPage from './ArticleDetailsPage';
+import {
+  Article, ArticleBlockType, ArticleType, ArticleView,
+} from 'entities/Article';
+import { ArticleList } from './ArticleList';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
+  title: 'entities/Article/ArticleList',
+  component: ArticleList,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'padded',
+    layout: 'fullscreen',
   },
-} satisfies Meta<typeof ArticleDetailsPage>;
+} satisfies Meta<typeof ArticleList>;
 
 export default meta;
 
@@ -93,12 +93,32 @@ const article: Article = {
   ],
 };
 
-export const Normal: Story = {
-  args: {},
+export const IsLoadingBig: Story = {
+  args: {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.BIG,
+  },
 };
 
-Normal.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
+export const IsLoadingSmall: Story = {
+  args: {
+    isLoading: true,
+    articles: [],
+    view: ArticleView.SMALL,
   },
-})];
+};
+
+export const Big: Story = {
+  args: {
+    articles: [article],
+    view: ArticleView.BIG,
+  },
+};
+
+export const Small: Story = {
+  args: {
+    articles: [article],
+    view: ArticleView.SMALL,
+  },
+};
