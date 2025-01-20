@@ -4,23 +4,13 @@ import { AppRouteProps, routeConfig } from 'shared/config/routeConfig/routeConfi
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
 
-// function AppRouter() {
 const AppRouter = memo(() => {
-  // const isAuth = useSelector(getUserAuthData);
-  //
-  // const routes = useMemo(() => Object.values(routeConfig).filter((item) => {
-  //   if (item.authOnly && !isAuth) {
-  //     return false;
-  //   }
-  //   return true;
-  // }), [isAuth]);
-
   const renderWithWrapper = useCallback((route: AppRouteProps) => {
     const element = (
       <Suspense fallback={<PageLoader />}>
-        <div className="page-wrapper">
-          {route.element}
-        </div>
+        {/* <div className="page-wrapper"> */}
+        {route.element}
+        {/* </div> */}
       </Suspense>
     );
 
@@ -36,19 +26,6 @@ const AppRouter = memo(() => {
   return (
     <Routes>
       {Object.values(routeConfig).map(renderWithWrapper)}
-      {/* {routes.map(({ element, path }) => ( */}
-      {/*  <Route */}
-      {/*    key={path} */}
-      {/*    path={path} */}
-      {/*    element={( */}
-      {/*      <Suspense fallback={<PageLoader />}> */}
-      {/*        <div className="page-wrapper"> */}
-      {/*          {element} */}
-      {/*        </div> */}
-      {/*      </Suspense> */}
-      {/*              )} */}
-      {/*  /> */}
-      {/* ))} */}
     </Routes>
 
   );
