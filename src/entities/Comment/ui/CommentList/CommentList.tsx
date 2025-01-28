@@ -37,6 +37,7 @@ const CommentList = ({
               comment={item}
               className={cls.comment}
               isLoading={isLoading}
+              key={item.id}
             />
           ),
         )
