@@ -11,10 +11,12 @@ import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlePageSchema } from 'pages/ArticlesPage';
 import { OptionalRecord } from 'app/types/types';
+import { UISchema } from 'features/UI';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: UISchema;
 
     // Async reducers
     loginForm?: LoginSchema;
