@@ -14,10 +14,10 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news - id 1",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
+      "views": 55555,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -86,11 +86,11 @@
     },
     {
       "id": "2",
-      "title": "Pyton news",
+      "title": "Pyton news  - id 2",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://velog.velcdn.com/images/ghkd1330/post/ebd51fe2-95b4-44b9-9306-1f9933592829/image.jpeg",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 895,
+      "createdAt": "26.02.2021",
       "userId": "1",
       "type": [
         "IT"
@@ -158,11 +158,11 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 3",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 87,
+      "createdAt": "16.03.1990",
       "userId": "1",
       "type": [
         "IT"
@@ -230,11 +230,11 @@
     },
     {
       "id": "4",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 4",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -254,11 +254,11 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 5",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 56,
+      "createdAt": "07.09.1974",
       "userId": "1",
       "type": [
         "IT"
@@ -278,10 +278,10 @@
     },
     {
       "id": "6",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 6",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 21,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -302,11 +302,11 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 7",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 6000,
+      "createdAt": "01.02.2013",
       "userId": "1",
       "type": [
         "IT"
@@ -326,10 +326,10 @@
     },
     {
       "id": "8",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 8",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 345,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -350,14 +350,14 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 9",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 23,
+      "createdAt": "16.12.2019",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -374,7 +374,7 @@
     },
     {
       "id": "10",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 10",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
       "views": 1022,
@@ -398,10 +398,10 @@
     },
     {
       "id": "11",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 11",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 5000,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -422,7 +422,7 @@
     },
     {
       "id": "12",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 2",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
       "views": 1022,
@@ -446,10 +446,10 @@
     },
     {
       "id": "13",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 3",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 4000,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -470,7 +470,7 @@
     },
     {
       "id": "14",
-      "title": "Kotlin news",
+      "title": "Kotlin news  - id 14",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
       "views": 1022,
@@ -494,10 +494,10 @@
     },
     {
       "id": "15",
-      "title": "Kotlin news",
+      "title": "Kotlin news - id 15",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 3000,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -521,7 +521,7 @@
       "title": "Kotlin news 16",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 2000,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -545,7 +545,7 @@
       "title": "Kotlin news 17",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
-      "views": 1022,
+      "views": 1000,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
