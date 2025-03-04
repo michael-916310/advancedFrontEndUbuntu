@@ -32,7 +32,7 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
-    'max-len': ['error', { ignoreComments: true, code: 120 }],
+    'max-len': ['error', { ignoreComments: true, code: 125 }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
@@ -41,6 +41,7 @@ module.exports = {
     'no-undef': 'off',
     'linebreak-style': 'off',
     'react/no-array-index-key': 'off',
+    'arrow-body-style': 'off',
   },
   globals: {
     __IS_DEV__: true,
@@ -53,6 +54,7 @@ module.exports = {
       rules: {
         'i18next/no-literal-string': 'off',
         'max-len': 'off',
+        target: 'off',
       },
     },
   ],
