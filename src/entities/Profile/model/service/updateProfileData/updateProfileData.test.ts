@@ -1,7 +1,7 @@
 import { TestAsyncThank } from 'shared/lib/tests/TestAsyncThank/TestAsyncThank';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidationProfileError } from 'entities/Profile';
+import { ValidationProfileError } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 
 const data = {

@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'ulbi-tv-michael-916310-plugin'],
   rules: {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
     'import/no-unresolved': 'off',
@@ -42,6 +42,7 @@ module.exports = {
     'linebreak-style': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
+    'ulbi-tv-michael-916310-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

@@ -74,7 +74,7 @@ export const ArticlesPageFilters = memo(({ className }: ArticlesPageProps) => {
     dispatch(articlesPageActions.setType(value));
     dispatch(articlesPageActions.setPage(1));
     fetchData();
-  }, [dispatch]);
+  }, [dispatch, fetchData]);
 
   return (
     <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
