@@ -31,7 +31,7 @@ const CurrencySelect = memo(({
       onChange={onHandleChange}
       readonly={readOnly}
       value={value}
-      direction="top"
+      direction="top start"
     />
   );
 });
