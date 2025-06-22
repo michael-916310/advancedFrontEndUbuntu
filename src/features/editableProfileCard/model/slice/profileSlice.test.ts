@@ -2,8 +2,9 @@ import { DeepPartial } from 'app/types/types';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 import { updateProfileData } from '../service/updateProfileData/updateProfileData';
-import { ProfileSchema, ValidationProfileError } from '../types/profile';
+
 import { profileActions, profileReducer } from './profileSlice';
+import { ProfileSchema, ValidationProfileError } from '../../model/types/editableProfileCardSchema'
 
 const data = {
   username: 'michael buranov',
@@ -70,8 +71,8 @@ describe('profileSlice.test', () => {
     };
 
     expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.fulfilled(data, ''),
+      state as ProfileSchema,
+      updateProfileData.fulfilled(data, ''),
     )).toEqual({
       isLoading: false,
       readonly: true,

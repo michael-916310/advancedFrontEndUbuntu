@@ -1,7 +1,8 @@
 import { TestAsyncThank } from 'shared/lib/tests/TestAsyncThank/TestAsyncThank';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
-import { ValidationProfileError } from '../../types/profile';
+
+import { ValidationProfileError } from '../../types/editableProfileCardSchema';
 import { updateProfileData } from './updateProfileData';
 
 const data = {
