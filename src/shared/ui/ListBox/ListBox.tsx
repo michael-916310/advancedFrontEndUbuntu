@@ -4,25 +4,24 @@ import {
 import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { HStack } from '../Stack/HStack/HStack';
-import { Button } from '../Button/Button';
 import cls from './ListBox.module.scss';
 import { DropdownDirection } from '../../types/ui';
 
 export interface ListBoxItem {
-    value: string;
-    content: ReactNode,
-    disabled?: boolean;
+  value: string;
+  content: ReactNode,
+  disabled?: boolean;
 }
 
 interface ListBoxProps {
-    items?: Array<ListBoxItem>
-    className?: string;
-    value?: string;
-    defaultValue?: string;
-    onChange: (value: string) => void;
-    readonly?: boolean;
-    direction?: DropdownDirection;
-    label?: string
+  items?: Array<ListBoxItem>
+  className?: string;
+  value?: string;
+  defaultValue?: string;
+  onChange: (value: string) => void;
+  readonly?: boolean;
+  direction?: DropdownDirection;
+  label?: string
 }
 
 export function ListBox(props: ListBoxProps) {
@@ -45,9 +44,12 @@ export function ListBox(props: ListBoxProps) {
           className={cls.trigger}
           disabled={readonly}
         >
-          <Button disabled={readonly}>
+          {/* <Button disabled={readonly}> */}
+          {/*  {value ?? defaultValue} */}
+          {/* </Button> */}
+          <span className={classNames(cls.spanButton, { [cls.disabled]: readonly }, [])}>
             {value ?? defaultValue}
-          </Button>
+          </span>
         </ListboxButton>
         <ListboxOptions
           anchor={direction}

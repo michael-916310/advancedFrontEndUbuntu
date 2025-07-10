@@ -12,19 +12,19 @@ import { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
-    className?: string;
-    data?: Profile;
-    error?: string;
-    isLoading?: boolean;
-    readOnly?: boolean;
-    onChangeFirstName?: (value?: string) => void;
-    onChangeLastName?: (value?: string) => void;
-    onChangeCity?: (value?: string) => void;
-    onChangeAge?: (value?: string) => void;
-    onChangeUsername?: (value?: string) => void;
-    onChangeAvatar?: (value?: string) => void;
-    onChangeCurrency?: (currency?: Currency) => void;
-    onChangeCountry?: (country?: Country) => void;
+  className?: string;
+  data?: Profile;
+  error?: string;
+  isLoading?: boolean;
+  readOnly?: boolean;
+  onChangeFirstName?: (value?: string) => void;
+  onChangeLastName?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  onChangeAvatar?: (value?: string) => void;
+  onChangeCurrency?: (currency?: Currency) => void;
+  onChangeCountry?: (country?: Country) => void;
 }
 
 const ProfileCard = ({
@@ -82,6 +82,7 @@ const ProfileCard = ({
         className={cls.input}
         onChange={onChangeFirstName}
         readOnly={readOnly}
+        data-testid={"ProfileCard.firstname"}
       />
       <Input
         value={data?.lastname}
@@ -89,6 +90,7 @@ const ProfileCard = ({
         className={cls.input}
         onChange={onChangeLastName}
         readOnly={readOnly}
+        data-testid={"ProfileCard.lastname"}
       />
       <Input
         value={data?.age}
