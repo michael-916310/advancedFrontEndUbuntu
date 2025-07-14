@@ -26,8 +26,8 @@ import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-    className?: string;
-    id: string;
+  className?: string;
+  id: string;
 }
 
 const reducers: ReducerList = {
@@ -127,6 +127,7 @@ const ArticleDetails = memo(({
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <VStack
         gap="16"
+        max
         className={classNames(cls.ArticleDetails, {}, [className])}
       >
         {content}
