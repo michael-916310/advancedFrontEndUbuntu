@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import AboutPage from './AboutPage';
 
 const meta = {
-  title: 'pages/AboutPage',
+  title: 'pages/AdminPanelPage',
   component: AboutPage,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
