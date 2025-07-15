@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comment';
@@ -13,10 +13,11 @@ import { fetchCommentByArticleId } from '../../model/services/fetchCommentByArti
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { Loader } from 'shared/ui/Loader/Loader'
 
 interface ArticleDetailsCommentsProps {
   className?: string;
-  id: string
+  id?: string
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -27,10 +28,6 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-
-  useInitialEffect(() => {
-    dispatch(fetchCommentByArticleId(id));
-  });
 
   const onSendComment = useCallback((value: string) => {
     dispatch(addCommentForArticle(value));
@@ -46,7 +43,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
         size={TextSize.L}
         title={t('Комментарий')}
       />
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={<Loader />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <CommentList
         isLoading={commentsIsLoading}
         comments={comments}
