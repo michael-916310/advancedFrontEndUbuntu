@@ -9,8 +9,8 @@ import { ArticlePageSchema } from 'pages/ArticlesPage';
 import { OptionalRecord } from 'app/types/types';
 import { UISchema } from 'features/UI';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
-import { rtkApi } from "shared/api/rtkApi";
-import { ProfileSchema } from 'features/editableProfileCard'
+import { rtkApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
   counter: CounterSchema;

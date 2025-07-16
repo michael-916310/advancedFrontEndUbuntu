@@ -2,8 +2,8 @@ import { TestAsyncThank } from 'shared/lib/tests/TestAsyncThank/TestAsyncThank';
 import { Country } from 'entities/Country';
 import { Currency } from 'entities/Currency';
 
-import { ValidationProfileError } from '../../types/editableProfileCardSchema';
 import { updateProfileData } from './updateProfileData';
+import { ValidationProfileError } from '../../../model/consts/consts';
 
 const data = {
   username: 'michael buranov',

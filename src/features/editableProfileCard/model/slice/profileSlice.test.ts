@@ -4,7 +4,8 @@ import { Currency } from 'entities/Currency';
 import { updateProfileData } from '../service/updateProfileData/updateProfileData';
 
 import { profileActions, profileReducer } from './profileSlice';
-import { ProfileSchema, ValidationProfileError } from '../../model/types/editableProfileCardSchema'
+import { ProfileSchema } from '../../model/types/editableProfileCardSchema';
+import { ValidationProfileError } from '../../model/consts/consts';
 
 const data = {
   username: 'michael buranov',

@@ -7,8 +7,9 @@ import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'shared/const/constant';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
+import { ArticleView } from '../../model/consts/consts';
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
   .fill(0)
@@ -25,7 +26,7 @@ interface ArticleListProps {
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
-    className, articles, isLoading, view = ArticleView.SMALL, target, virtualized = true
+    className, articles, isLoading, view = ArticleView.SMALL, target, virtualized = true,
   } = props;
   const { t } = useTranslation();
 
@@ -85,7 +86,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
       {({
         height, width, registerChild, onChildScroll, scrollTop, isScrolling,
       }) => (
-        <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>\
+        <div ref={registerChild} className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+          \
           {virtualized ? (
             <List
               autoHeight

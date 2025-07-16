@@ -10,7 +10,6 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfileCard } from 'entities/Profile';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from 'shared/ui/Stack';
-import { ValidationProfileError } from '../../model/types/editableProfileCardSchema';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { getProfileReadOnly } from '../../model/selectors/getProfileReadOnly/getProfileReadOnly';
@@ -19,6 +18,7 @@ import { fetchProfileData } from '../../model/service/fetchProfileData/fetchProf
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { ProfilePageCardHeader } from '../../ui/ProfilePageCardHeader/ProfilePageCardHeader';
+import { ValidationProfileError } from '../../model/consts/consts';
 
 const reducer: ReducerList = {
   profile: profileReducer,

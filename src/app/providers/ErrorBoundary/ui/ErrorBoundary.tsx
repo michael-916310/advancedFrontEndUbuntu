@@ -1,13 +1,13 @@
 import React, { ReactNode, Suspense } from 'react';
 import { ErrorInfo } from 'react-dom/client';
-import { PageError } from 'widgets/PageError/ui/PageError';
+import { PageError } from 'widgets/PageError/';
 
 interface ErrorBoundaryProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 interface ErrorBoundaryState {
-    hasError: boolean
+  hasError: boolean
 }
 
 class ErrorBoundary
