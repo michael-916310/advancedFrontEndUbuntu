@@ -24,7 +24,7 @@ export const ProfilePageCardHeader = memo((props: ProfilePageCardHeaderProps) =>
 
   const authData = useSelector(getUserAuthData);
   const profileData = useSelector(getProfileData);
-  debugger
+
   const canEdit = authData?.id === profileData?.id;
 
   const readOnly = useSelector(getProfileReadOnly);

@@ -1,16 +1,3 @@
-.Dropdown {
-  position: relative;
-}
-
-.btn {
-  background: none;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -31,6 +18,3 @@
   cursor: pointer;
 }
 
-.active {
-  background-color: var(--inverted-primary-color);
-}
