@@ -1,4 +1,37 @@
 {
+  "notifications": [
+    {
+      "id": "1",
+      "title": "notification 1",
+      "description": "description 1",
+      "useId": "1"
+    },
+    {
+      "id": "2",
+      "title": "notification 2",
+      "description": "description 2",
+      "useId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "notification 3",
+      "description": "description 3",
+      "useId": "1"
+    },
+    {
+      "id": "4",
+      "title": "notification 3",
+      "description": "description 3",
+      "useId": "1"
+    },
+    {
+      "id": "5",
+      "title": "notification 3",
+      "description": "description 3",
+      "useId": "1"
+    }
+  ],
   "posts": [
     {
       "id": "1",
@@ -693,7 +726,7 @@
       "lastname": "Buranov",
       "age": 51,
       "currency": "RUB",
-      "country": "Belarus",
+      "country": "Russia",
       "city": "Mos",
       "username": "admin",
       "avatar": "https://s.digitalocean.ru/upload/1686292039_1650919998_d091d18bd181d182d180d0bed0b2_d0a5d0b0d0bad0b5d180.jpg"

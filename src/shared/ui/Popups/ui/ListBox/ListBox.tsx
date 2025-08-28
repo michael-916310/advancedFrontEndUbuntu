@@ -3,9 +3,10 @@ import {
 } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { HStack } from '../Stack/HStack/HStack';
+import { HStack } from '../../../Stack/HStack/HStack';
 import cls from './ListBox.module.scss';
-import { DropdownDirection } from '../../types/ui';
+import { DropdownDirection } from '../../../../types/ui';
+import popupCls from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {
   value: string;
@@ -34,7 +35,7 @@ export function ListBox(props: ListBoxProps) {
       {label && <span>{`${label}>`}</span>}
       <HListBox
         as="div"
-        className={classNames(cls.ListBox, {}, [className])}
+        className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         disabled={readonly}
         value={value}
         onChange={onChange}
@@ -65,8 +66,8 @@ export function ListBox(props: ListBoxProps) {
               {({ selected, active }) => (
                 <li
                   className={classNames(cls.item, {
-                    [cls.active]: active,
-                    [cls.disabled]: item.disabled,
+                    [popupCls.active]: active,
+                    [popupCls.disabled]: item.disabled,
                   })}
                 >
                   {selected && '!!!'}

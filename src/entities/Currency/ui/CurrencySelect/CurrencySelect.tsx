@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 import { Currency } from '../../model/types/currency';
 
 const options = [
@@ -9,10 +9,10 @@ const options = [
 ];
 
 interface CurrencySelectProps {
-    className?: string
-    value?: Currency;
-    onChange?: (value: Currency) => void;
-    readOnly?: boolean
+  className?: string
+  value?: Currency;
+  onChange?: (value: Currency) => void;
+  readOnly?: boolean
 }
 
 const CurrencySelect = memo(({
