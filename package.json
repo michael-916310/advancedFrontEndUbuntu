@@ -13,6 +13,8 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
@@ -100,7 +102,9 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.2",
+    "@react-spring/web": "^10.0.2",
     "@reduxjs/toolkit": "^2.2.2",
+    "@use-gesture/react": "^10.3.1",
     "axios": "^1.6.8",
     "concurrently": "^8.2.2",
     "i18next": "^23.7.16",

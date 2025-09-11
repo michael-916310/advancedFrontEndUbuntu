@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+storybook-static/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Config files that should not be formatted
+package-lock.json
+yarn.lock
+
+# Test reports
+reports/
+coverage/
+
+# Logs
+*.log
+
+# Environment files
+.env*
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
