@@ -1,4 +1,4 @@
-import { User } from 'entities/User';
+import { User } from '@/entities/User';
 import { ArticleBlockType, ArticleType } from '../consts/consts';
 
 export type ArticleBlockBase = {
@@ -10,7 +10,6 @@ export interface ArticleCodeBlock extends ArticleBlockBase {
   type: ArticleBlockType.CODE;
   code: string;
 }
-
 
 export interface ArticleImageBlock extends ArticleBlockBase {
   type: ArticleBlockType.IMAGE;

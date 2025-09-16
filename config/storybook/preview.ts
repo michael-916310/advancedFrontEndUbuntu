@@ -1,9 +1,9 @@
 import type { Preview } from '@storybook/react';
-import { StyledDecorator } from 'shared/config/storybook/StyledDecorator/StyledDecorator';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator';
-import { SuspenseDecorator } from 'shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/app/providers/ThemeProvider';
+import { RouterDecorator } from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { SuspenseDecorator } from '@/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { StyledDecorator } from '@/shared/config/storybook/StyledDecorator/StyledDecorator';
 
 const preview: Preview = {
   parameters: {
@@ -16,7 +16,12 @@ const preview: Preview = {
     },
   },
 
-  decorators: [StyledDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator, SuspenseDecorator],
+  decorators: [
+    StyledDecorator,
+    ThemeDecorator(Theme.LIGHT),
+    RouterDecorator,
+    SuspenseDecorator,
+  ],
 };
 
 export default preview;

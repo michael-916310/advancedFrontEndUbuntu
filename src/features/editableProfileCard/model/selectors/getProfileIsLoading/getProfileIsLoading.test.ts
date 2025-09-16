@@ -1,5 +1,5 @@
-import { DeepPartial } from 'app/types/types';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { DeepPartial } from '@/app/types/types';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileIsLoading } from './getProfileIsLoading';
 
 describe('getProfileIsLoading.test', () => {

@@ -1,4 +1,4 @@
-import { DeepPartial } from 'app/types/types';
+import { DeepPartial } from '@/app/types/types';
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
 

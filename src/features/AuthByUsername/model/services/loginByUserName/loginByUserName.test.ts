@@ -1,5 +1,5 @@
-import { TestAsyncThank } from 'shared/lib/tests/TestAsyncThank/TestAsyncThank';
-import { userActions } from 'entities/User';
+import { TestAsyncThank } from '@/shared/lib/tests/TestAsyncThank/TestAsyncThank';
+import { userActions } from '@/entities/User';
 import { loginByUserName } from './loginByUserName';
 
 // jest.mock('axios');

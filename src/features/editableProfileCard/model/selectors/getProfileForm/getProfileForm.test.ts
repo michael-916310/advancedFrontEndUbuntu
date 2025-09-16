@@ -1,7 +1,7 @@
-import { DeepPartial } from 'app/types/types';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { DeepPartial } from '@/app/types/types';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { getProfileForm } from './getProfileForm';
 
 describe('getProfileForm.test', () => {

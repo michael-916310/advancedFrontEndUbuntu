@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import AvatarImg from 'shared/assets/tests/Avatar.jpg';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import AvatarImg from '@/shared/assets/tests/Avatar.jpg';
 import { ProfileCard } from './ProfileCard';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

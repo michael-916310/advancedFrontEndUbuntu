@@ -1,5 +1,5 @@
-import { DeepPartial } from 'app/types/types';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { DeepPartial } from '@/app/types/types';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
 
 import { ValidationProfileError } from '../../../model/consts/consts';

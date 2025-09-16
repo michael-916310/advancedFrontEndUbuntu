@@ -1,7 +1,7 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
 import axios, { AxiosStatic } from 'axios';
-import { DeepPartial } from 'app/types/types';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { DeepPartial } from '@/app/types/types';
 
 jest.mock('axios');
 const mockAxios = jest.mocked(axios, { shallow: false });

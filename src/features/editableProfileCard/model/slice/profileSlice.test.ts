@@ -1,6 +1,6 @@
-import { DeepPartial } from 'app/types/types';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
+import { DeepPartial } from '@/app/types/types';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { updateProfileData } from '../service/updateProfileData/updateProfileData';
 
 import { profileActions, profileReducer } from './profileSlice';

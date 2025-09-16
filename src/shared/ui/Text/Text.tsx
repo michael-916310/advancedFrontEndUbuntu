@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export enum TextTheme {
@@ -27,7 +27,7 @@ interface TextProps {
   theme?: TextTheme;
   align?: TextAlign;
   size?: TextSize;
-  "data-testid"?: string;
+  'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
@@ -46,27 +46,29 @@ const Text = memo(
     theme = TextTheme.PRIMARY,
     align = TextAlign.LEFT,
     size = TextSize.M,
-    "data-testid": dataTestId = "Text"
+    'data-testid': dataTestId = 'Text',
   }: TextProps) => {
     const HeaderTag = mapSizeToHeaderTag[size];
     return (
       <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
-        {title &&
+        {title
+          && (
           <HeaderTag
             className={cls.title}
             data-testid={`${dataTestId}.Header`}
           >
             {title}
           </HeaderTag>
-        }
-        {text &&
+          )}
+        {text
+          && (
           <p
             className={cls.text}
             data-testid={`${dataTestId}.Paragraph`}
           >
             {text}
           </p>
-        }
+          )}
       </div>
     );
   }

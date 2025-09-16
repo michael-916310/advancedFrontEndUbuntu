@@ -1,7 +1,9 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import React, { memo, ReactNode, useCallback, useEffect } from 'react';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import React, {
+  memo, ReactNode, useCallback, useEffect,
+} from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -9,7 +11,7 @@ import { Portal } from '../Portal/Portal';
 import {
   AnimationProvider,
   useAnimationLibs,
-} from 'shared/lib/components/AnimationProvider';
+} from '@/shared/lib/components/AnimationProvider';
 
 interface DrawerProps {
   className?: string;
@@ -23,7 +25,9 @@ const height = window.innerHeight - 100;
 
 export const DrawerContent = memo((props: DrawerProps) => {
   const { Gesture, Spring } = useAnimationLibs();
-  const { className, children, onClose, isOpen, lazy } = props;
+  const {
+    className, children, onClose, isOpen, lazy,
+  } = props;
   const { theme } = useTheme();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
@@ -71,14 +75,14 @@ export const DrawerContent = memo((props: DrawerProps) => {
       filterTaps: true,
       bounds: { top: 0 },
       rubberband: true,
-    }
+    },
   );
 
   if (!isOpen) {
     return null;
   }
 
-  const display = y.to(py => (py < height ? 'block' : 'none'));
+  const display = y.to((py) => (py < height ? 'block' : 'none'));
 
   return (
     <Portal>

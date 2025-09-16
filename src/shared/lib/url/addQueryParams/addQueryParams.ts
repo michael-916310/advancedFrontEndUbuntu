@@ -1,4 +1,4 @@
-import { OptionalRecord } from 'app/types/types';
+import { OptionalRecord } from '@/app/types/types';
 
 export function getQueryParams(params: OptionalRecord<string, string>) {
   const searchParams = new URLSearchParams(window.location.search);
