@@ -20,7 +20,7 @@ export const StarRating = memo((props: ArticleEditPageProps) => {
     className, onSelect, size = 30, selectedStars = 0,
   } = props;
 
-  const [currentStartCount, setCurrentStartCount] = useState(0);
+  const [currentStartCount, setCurrentStartCount] = useState(selectedStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
 
   const onHover = (starsCount: number) => () => {
