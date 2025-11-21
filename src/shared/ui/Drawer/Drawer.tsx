@@ -1,4 +1,6 @@
-import React, { FC, memo, ReactNode, useCallback, useEffect } from 'react';
+import React, {
+  FC, memo, ReactNode, useCallback, useEffect,
+} from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
@@ -20,7 +22,9 @@ const height = window.innerHeight - 100;
 
 export const DrawerContent = memo((props: DrawerProps) => {
   const { Gesture, Spring } = useAnimationLibs();
-  const { className, children, onClose, isOpen, lazy } = props;
+  const {
+    className, children, onClose, isOpen, lazy,
+  } = props;
   const { theme } = useTheme();
   const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
 
@@ -44,7 +48,9 @@ export const DrawerContent = memo((props: DrawerProps) => {
   };
 
   const bind = Gesture.useDrag(
-    ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
+    ({
+      last, velocity: [, vy], direction: [, dy], movement: [, my], cancel,
+    }) => {
       if (my < -70) cancel();
 
       if (last) {
