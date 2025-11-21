@@ -4,7 +4,7 @@ import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 const meta = {
-  title: 'shared/ThemeSwitcher',
+  title: 'widgets/ThemeSwitcher',
   component: ThemeSwitcher,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout

@@ -18,8 +18,6 @@ const article: Article = {
   subtitle: 'subtitle',
 };
 
-console.log('==== url:', `${__API__}/articles?_limit=3`);
-
 const meta = {
   title: 'features/ArticleRecommendationsList',
   component: ArticleRecommendationsList,
