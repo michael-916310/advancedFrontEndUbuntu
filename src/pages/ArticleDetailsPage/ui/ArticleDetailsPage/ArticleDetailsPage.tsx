@@ -6,7 +6,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgets/Page/Page';
+
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { ArticleDetailsComments } from '../../ui/ArticleDetailsComments/ArticleDetailsComments';
@@ -15,6 +15,7 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { fetchCommentByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleRating } from '@/features/articleRaiting';
+import { Page } from '@/widgets/Page';
 
 const reducers: ReducerList = {
   articleDetailsPage: articleDetailsPageReducer,

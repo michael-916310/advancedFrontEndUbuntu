@@ -5,7 +5,7 @@ import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Page } from '@/widgets/Page/Page';
+
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { initArticlePage } from '../../model/service/initArticlePage/initArticlePage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
@@ -13,6 +13,7 @@ import { fetchNextArticlePage } from '../../model/service/fetchNextArticlePage/f
 import cls from './ArticlesPage.module.scss';
 import { articlesPageReducer } from '../../model/slice/acticlesPageSlice';
 import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfiniteList';
+import { Page } from '@/widgets/Page';
 
 interface ArticlesPageProps {
   className?: string;
