@@ -24,6 +24,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     'ulbi-tv-michael-916310-plugin',
+    'unused-imports',
   ],
   rules: {
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx', '.jsx'] }],
@@ -51,6 +52,7 @@ module.exports = {
     'implicit-arrow-linebreak': 'off',
     'comma-dangle': ['error', 'always-multiline'],
     'ulbi-tv-michael-916310-plugin/path-checker': 'error',
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,
