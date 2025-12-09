@@ -103,11 +103,11 @@ describe('feature/EditableProfileCard', () => {
   test('Запрос на сервер', async () => {
     const mockPutReq = jest.spyOn($api, 'put');
     componentRender(<EditableProfileCard id="1" />, options);
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.EditButton'));
+    await userEvent.click(screen.getByTestId('ProfilePageCardHeader.EditButton'));
 
     await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user');
 
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeader.SaveButton'));
+    await userEvent.click(screen.getByTestId('ProfilePageCardHeader.SaveButton'));
 
     expect(mockPutReq).toHaveBeenCalled();
   });

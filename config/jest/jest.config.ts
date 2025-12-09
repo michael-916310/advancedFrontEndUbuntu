@@ -39,6 +39,7 @@ const config: Config = {
   moduleNameMapper: {
     '\\.(s?css|less)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 
   // The glob patterns Jest uses to detect test files
