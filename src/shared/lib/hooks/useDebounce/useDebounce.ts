@@ -1,5 +1,11 @@
 import { MutableRefObject, useCallback, useRef } from 'react';
 
+/**
+ * Шаред слой можно задокументировать, остальные не стоит
+ * @param callback
+ * @param delay
+ */
+
 export function useDebounce(callback: (...args: any[]) => void, delay: number) {
   const timer = useRef() as MutableRefObject<any>;
 
