@@ -14,6 +14,14 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    themes: {
+      default: 'light',
+      list: [
+        { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
+        { name: 'dark', class: Theme.DARK, color: '#3b5998' },
+        { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
+      ],
+    },
   },
 
   decorators: [
