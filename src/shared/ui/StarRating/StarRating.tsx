@@ -44,7 +44,7 @@ export const StarRating = memo((props: ArticleEditPageProps) => {
   };
 
   return (
-    <div className={classNames(cls.StarRating, {}, [className])}>
+    <div className={className}>
       {
         stars.map((starNumber) => {
           return (

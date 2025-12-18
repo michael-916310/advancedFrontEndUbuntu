@@ -4,15 +4,15 @@ import cls from './Tabs.module.scss';
 import { Card, CardTheme } from '../Card/Card';
 
 export interface TabItem {
-    value: string;
-    content: ReactNode,
+  value: string;
+  content: ReactNode,
 }
 
 interface TabsProps {
-    className?: string;
-    tabs: TabItem[];
-    value: string;
-    onTabClick: (value: TabItem) => void;
+  className?: string;
+  tabs: TabItem[];
+  value: string;
+  onTabClick: (value: TabItem) => void;
 }
 
 export const Tabs = memo((props: TabsProps) => {
@@ -29,7 +29,6 @@ export const Tabs = memo((props: TabsProps) => {
       {tabs.map((tab) => (
         <Card
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
-          className={cls.tab}
           key={tab.value}
           onClick={clickHandle(tab)}
         >
