@@ -289,7 +289,7 @@
       "id": "5",
       "title": "Kotlin news  - id 5",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang_break.png",
       "views": 56,
       "createdAt": "07.09.1974",
       "userId": "1",
@@ -707,7 +707,7 @@
       "roles": [
         "USER"
       ],
-      "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
+      "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048_break.jpg.break"
     },
     {
       "id": "3",
@@ -740,7 +740,7 @@
       "country": "Russia",
       "city": "Moscow-2",
       "username": "ulbi tv",
-      "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
+      "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg.break"
     }
   ],
   "article-ratings": [
