@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 import { MutableRefObject, UIEvent, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
