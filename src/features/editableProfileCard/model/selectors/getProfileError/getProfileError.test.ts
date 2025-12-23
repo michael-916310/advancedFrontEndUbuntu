@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileError } from './getProfileError';
+
+import '@testing-library/jest-dom';
 
 describe('getProfileError.test', () => {
   test('should return error', () => {

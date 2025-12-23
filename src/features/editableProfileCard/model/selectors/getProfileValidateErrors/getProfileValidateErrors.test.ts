@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileValidateErrors } from './getProfileValidateErrors';
+
+import '@testing-library/jest-dom';
 
 import { ValidationProfileError } from '../../../model/consts/consts';
 

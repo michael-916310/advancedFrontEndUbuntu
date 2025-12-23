@@ -1,8 +1,10 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { getProfileData } from './getProfileData';
+import '@testing-library/jest-dom';
 
 describe('getProfileData.test', () => {
   test('should return data', () => {

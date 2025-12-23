@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { TestAsyncThank } from '@/shared/lib/tests/TestAsyncThank/TestAsyncThank';
 import { userActions } from '@/entities/User';
 import { loginByUserName } from './loginByUserName';
+
+import '@testing-library/jest-dom';
 
 // jest.mock('axios');
 // const mockAxios = jest.mocked(axios, { shallow: false });

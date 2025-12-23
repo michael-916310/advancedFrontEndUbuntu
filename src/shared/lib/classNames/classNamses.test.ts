@@ -1,5 +1,8 @@
 // import { classNames } from './classNames';
+import { expect } from '@jest/globals';
 import { classNames } from './classNames';
+
+import '@testing-library/jest-dom';
 
 describe('classNames', () => {
   test('with only first param', () => {

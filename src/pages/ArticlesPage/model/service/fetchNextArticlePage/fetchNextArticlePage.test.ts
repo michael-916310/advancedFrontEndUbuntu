@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { TestAsyncThank } from '@/shared/lib/tests/TestAsyncThank/TestAsyncThank';
 import { fetchArticlesList } from '../fetchArticleList/fetchArticleList';
 import { fetchNextArticlePage } from './fetchNextArticlePage';
+
+import '@testing-library/jest-dom';
 
 jest.mock('../fetchArticleList/fetchArticleList');
 

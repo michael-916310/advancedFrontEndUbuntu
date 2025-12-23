@@ -1,4 +1,7 @@
+import { expect } from '@jest/globals';
 import { getQueryParams } from './addQueryParams';
+
+import '@testing-library/jest-dom';
 
 describe('shared/url/addQueryParams', () => {
   test('test with one param', () => {

@@ -1,5 +1,8 @@
+import { expect } from '@jest/globals';
 import { CounterSchema } from '../type/counterSchema';
 import { counterActions, counterReducer } from './counterSlice';
+
+import '@testing-library/jest-dom';
 
 describe('conterSlice.test', () => {
   test('decrement', () => {

@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { DeepPartial } from '@/app/types/types';
 import { getCounterValue } from './getCounterValue';
+
+import '@testing-library/jest-dom';
 
 describe('getCounterValue.test', () => {
   test('', () => {

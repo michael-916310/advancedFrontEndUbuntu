@@ -1,6 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
+import { expect } from '@jest/globals';
 import { componentRender } from '../../../shared/lib/tests';
 import { Counter } from './Counter';
+import '@testing-library/jest-dom';
 
 describe('Counter', () => {
   test('render from state', () => {

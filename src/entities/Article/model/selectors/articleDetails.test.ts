@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetails';
+
+import '@testing-library/jest-dom';
 
 describe('getArticleDetailsData in articleDetails', () => {
   test('should return data', () => {

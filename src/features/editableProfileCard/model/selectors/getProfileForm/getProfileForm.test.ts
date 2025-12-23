@@ -1,8 +1,11 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { getProfileForm } from './getProfileForm';
+
+import '@testing-library/jest-dom';
 
 describe('getProfileForm.test', () => {
   test('should return form', () => {

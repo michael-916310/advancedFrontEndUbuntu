@@ -1,9 +1,12 @@
+import { expect } from '@jest/globals';
 import { TestAsyncThank } from '@/shared/lib/tests/TestAsyncThank/TestAsyncThank';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 
 import { updateProfileData } from './updateProfileData';
 import { ValidationProfileError } from '../../../model/consts/consts';
+
+import '@testing-library/jest-dom';
 
 const data = {
   username: 'michael buranov',

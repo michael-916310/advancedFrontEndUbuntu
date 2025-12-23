@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { DeepPartial } from '@/app/types/types';
 import { getLoginIsLoading } from './getLoginIsLoading';
+
+import '@testing-library/jest-dom';
 
 describe('getLoginIsLoading.test', () => {
   test('should return value', () => {

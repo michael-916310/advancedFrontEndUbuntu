@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getProfileReadOnly } from './getProfileReadOnly';
+
+import '@testing-library/jest-dom';
 
 describe('getProfileReadOnly.test', () => {
   test('should return readonly', () => {

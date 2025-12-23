@@ -1,3 +1,4 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
@@ -6,6 +7,8 @@ import { updateProfileData } from '../service/updateProfileData/updateProfileDat
 import { profileActions, profileReducer } from './profileSlice';
 import { ProfileSchema } from '../../model/types/editableProfileCardSchema';
 import { ValidationProfileError } from '../../model/consts/consts';
+
+import '@testing-library/jest-dom';
 
 const data = {
   username: 'michael buranov',

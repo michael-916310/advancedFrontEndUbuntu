@@ -1,6 +1,9 @@
+import { expect } from '@jest/globals';
 import { DeepPartial } from '@/app/types/types';
 import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
+
+import '@testing-library/jest-dom';
 
 describe('loginSlice.test', () => {
   test('test set username', () => {
