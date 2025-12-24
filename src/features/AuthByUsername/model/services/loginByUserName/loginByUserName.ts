@@ -4,15 +4,15 @@ import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 
 export interface LoginByUserProps {
-    username: string;
-    password: string;
+  username: string;
+  password: string;
 }
 
 export const loginByUserName = createAsyncThunk<
-    User,
-    LoginByUserProps,
-    ThunkConfig<string>
->('login/loginByUserName', async (authData, thunkApi) => {
+  User,
+  LoginByUserProps,
+  ThunkConfig<string>
+>('common/loginByUserName', async (authData, thunkApi) => {
   const { dispatch, rejectWithValue, extra } = thunkApi;
 
   try {

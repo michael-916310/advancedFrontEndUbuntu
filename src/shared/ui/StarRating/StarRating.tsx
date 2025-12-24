@@ -54,6 +54,8 @@ export const StarRating = memo((props: ArticleEditPageProps) => {
                 { [cls.selected]: isSelected },
                 [currentStartCount >= starNumber ? cls.hovered : cls.normal],
               )}
+              data-testid={`StarRating.${starNumber}`}
+              data-selected={currentStartCount >= starNumber}
               Svg={StarIcon}
               key={starNumber}
               width={size}

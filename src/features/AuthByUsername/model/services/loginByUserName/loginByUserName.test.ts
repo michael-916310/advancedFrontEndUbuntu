@@ -9,7 +9,7 @@ import '@testing-library/jest-dom';
 // const mockAxios = jest.mocked(axios, { shallow: false });
 
 describe('./loginByUserName.test', () => {
-  test('Success login', async () => {
+  test('Success common', async () => {
     const userValue = {
       username: '123',
       id: '1',
@@ -31,7 +31,7 @@ describe('./loginByUserName.test', () => {
     expect(result.payload).toEqual(userValue);
   });
 
-  test('Failed login', async () => {
+  test('Failed common', async () => {
     const thunk = new TestAsyncThank(loginByUserName);
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk({

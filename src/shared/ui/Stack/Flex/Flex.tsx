@@ -38,18 +38,18 @@ const gapClasses: Record<FlexGap, string> = {
 type DivProps = HTMLAttributes<HTMLDivElement>;
 
 export interface FlexProps extends DivProps {
-    className?: string;
-    children?: ReactNode;
-    justify?: FlexJustify;
-    align?: FlexAlign;
-    direction: FlexDirection;
-    gap?: FlexGap;
-    max?: boolean;
+  className?: string;
+  children?: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
 }
 
 export const Flex = memo((props: FlexProps) => {
   const {
-    className, children, justify = 'start', align = 'center', direction = 'row', gap, max,
+    className, children, justify = 'start', align = 'center', direction = 'row', gap, max, ...otherProps
   } = props;
 
   const classes = [
@@ -65,7 +65,7 @@ export const Flex = memo((props: FlexProps) => {
   };
 
   return (
-    <div className={classNames(cls.Flex, mods, classes)}>
+    <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
       {children}
     </div>
   );

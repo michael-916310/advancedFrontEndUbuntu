@@ -596,6 +596,84 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Kotlin news 17",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "eguAjlo"
+    },
+    {
+      "title": "Kotlin news 17",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "GLlptAm"
+    },
+    {
+      "title": "Kotlin news 17",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "FRtXIhf"
+    },
+    {
+      "title": "Kotlin news 17",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "AmRQ1lj"
+    },
+    {
+      "title": "Kotlin news 17",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "gXGIhXv"
+    },
+    {
+      "title": "Kotlin news 17",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-ssl-devio-img.classmethod.jp/wp-content/uploads/2015/03/kotlinlang.png",
+      "views": 1000,
+      "createdAt": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "lddIHEp"
     }
   ],
   "comments": [
@@ -750,6 +828,16 @@
       "city": "Moscow-2",
       "username": "ulbi tv",
       "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg.break"
+    },
+    {
+      "id": "4",
+      "first": "test sypress",
+      "lastname": "user",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow-2",
+      "username": "test sypress"
     }
   ],
   "article-ratings": [

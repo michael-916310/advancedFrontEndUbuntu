@@ -13,8 +13,8 @@ import { getAddCommentFormError, getAddCommentFormText } from '../../model/selec
 import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
-    className?: string;
-    onSendComment: (text: string) => void;
+  className?: string;
+  onSendComment: (text: string) => void;
 }
 
 const reducers: ReducerList = {
@@ -41,14 +41,26 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <HStack justify="between" max className={classNames(cls.AddCommentForm, {}, [className])}>
+      <HStack
+        data-testid="AddCommentForm"
+        justify="between"
+        max
+        className={classNames(cls.AddCommentForm, {}, [className])}
+      >
         <Input
           className={cls.input}
+          data-testid="AddCommentForm.Input"
           placeholder={t('Введите текст комментария')}
           value={text}
           onChange={onCommentTextChange}
         />
-        <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>{t('Отправить')}</Button>
+        <Button
+          data-testid="AddCommentForm.Button"
+          theme={ButtonTheme.OUTLINE}
+          onClick={onSendHandler}
+        >
+          {t('Отправить')}
+        </Button>
       </HStack>
     </DynamicModuleLoader>
   );
