@@ -17,6 +17,7 @@
     "esModuleInterop": true,
     "isolatedModules": true
   },
+  "exclude": ["cypress"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
