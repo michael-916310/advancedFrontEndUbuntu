@@ -13,15 +13,15 @@ describe('Пользователь заходит на страницу стат
     cy.removeArticle(currentArticleId);
   });
 
-  it.skip('и видит содержимое статьи', () => {
+  it('и видит содержимое статьи', () => {
     cy.getByTestId('ArticleDetails.Info').should('exist');
   });
 
-  it.skip('и видит список рекомендаций', () => {
+  it('и видит список рекомендаций', () => {
     cy.getByTestId('ArticleRecommendationsList').should('exist');
   });
 
-  it.skip('и оставляет комментарий', () => {
+  it('и оставляет комментарий', () => {
     cy.getByTestId('ArticleDetails.Info');
     cy.getByTestId('AddCommentForm').scrollIntoView();
     cy.addComment('text');
