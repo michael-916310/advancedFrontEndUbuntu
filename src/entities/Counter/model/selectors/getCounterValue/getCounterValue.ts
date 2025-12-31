@@ -3,8 +3,10 @@ import { getCounter } from '../getCounter/getCounter';
 import { buildSelector } from '@/shared/lib/store';
 
 export const getCounterValue = createSelector(
-  getCounter,
-  (counter) => counter.value,
+    getCounter,
+    (counter) => counter.value,
 );
 
-export const [useCounterValue, getCounterValueSelector] = buildSelector((state) => state.counter.value);
+export const [useCounterValue, getCounterValueSelector] = buildSelector(
+    (state) => state.counter.value,
+);

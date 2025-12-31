@@ -8,39 +8,39 @@ import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-  className?: string;
-  view: ArticleView;
-  onViewClick?: (view: ArticleView) => void;
+    className?: string;
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
 }
 
 const viewTypes = [
-  { view: ArticleView.SMALL, icon: ListIcon },
-  { view: ArticleView.BIG, icon: TiledIcon },
+    { view: ArticleView.SMALL, icon: ListIcon },
+    { view: ArticleView.BIG, icon: TiledIcon },
 ];
 
-export const ArticleViewSelector = memo(({
-  className,
-  view,
-  onViewClick,
-}: ArticleViewSelectorProps) => {
-  const onClick = (value: ArticleView) => () => {
-    onViewClick?.(value);
-  };
+export const ArticleViewSelector = memo(
+    ({ className, view, onViewClick }: ArticleViewSelectorProps) => {
+        const onClick = (value: ArticleView) => () => {
+            onViewClick?.(value);
+        };
 
-  return (
-    <div className={className}>
-      {viewTypes.map((item) => (
-        <Button
-          key={item.view}
-          theme={ButtonTheme.CLEAR}
-          onClick={onClick(item.view)}
-        >
-          <Icon
-            Svg={item.icon}
-            className={classNames('', { [cls.notSelected]: item.view !== view })}
-          />
-        </Button>
-      ))}
-    </div>
-  );
-});
+        return (
+            <div className={className}>
+                {viewTypes.map((item) => (
+                    <Button
+                        key={item.view}
+                        theme={ButtonTheme.CLEAR}
+                        onClick={onClick(item.view)}
+                    >
+                        <Icon
+                            Svg={item.icon}
+                            className={classNames('', {
+                                [cls.notSelected]: item.view !== view,
+                            })}
+                        />
+                    </Button>
+                ))}
+            </div>
+        );
+    },
+);

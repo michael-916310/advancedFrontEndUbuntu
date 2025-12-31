@@ -8,18 +8,20 @@ import '@testing-library/jest-dom';
 import { ValidationProfileError } from '../../../model/consts/consts';
 
 describe('getProfileValidateErrors.test', () => {
-  test('should return error', () => {
-    const errors = [ValidationProfileError.NO_DATA];
-    const state: DeepPartial<StateSchema> = {
-      profile: {
-        validateError: errors,
-      },
-    };
-    expect(getProfileValidateErrors(state as StateSchema)).toEqual(errors);
-  });
+    test('should return error', () => {
+        const errors = [ValidationProfileError.NO_DATA];
+        const state: DeepPartial<StateSchema> = {
+            profile: {
+                validateError: errors,
+            },
+        };
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(errors);
+    });
 
-  test('should work with empty state', () => {
-    const state: DeepPartial<StateSchema> = {};
-    expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
-  });
+    test('should work with empty state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
+            undefined,
+        );
+    });
 });

@@ -6,30 +6,30 @@ import { StyledDecorator } from '@/shared/config/storybook/StyledDecorator/Style
 import { Theme } from '@/shared/const/theme';
 
 const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    parameters: {
+        actions: { argTypesRegex: '^on[A-Z].*' },
+        controls: {
+            matchers: {
+                color: /(background|color)$/i,
+                date: /Date$/i,
+            },
+        },
+        themes: {
+            default: 'light',
+            list: [
+                { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
+                { name: 'dark', class: Theme.DARK, color: '#3b5998' },
+                { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
+            ],
+        },
     },
-    themes: {
-      default: 'light',
-      list: [
-        { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
-        { name: 'dark', class: Theme.DARK, color: '#3b5998' },
-        { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
-      ],
-    },
-  },
 
-  decorators: [
-    StyledDecorator,
-    ThemeDecorator(Theme.LIGHT),
-    RouterDecorator,
-    SuspenseDecorator,
-  ],
+    decorators: [
+        StyledDecorator,
+        ThemeDecorator(Theme.LIGHT),
+        RouterDecorator,
+        SuspenseDecorator,
+    ],
 };
 
 export default preview;

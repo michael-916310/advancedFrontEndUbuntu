@@ -12,48 +12,56 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 
 interface SidebarProps {
-  className?: string;
+    className?: string;
 }
 
 const Sidebar = memo(({ className }: SidebarProps) => {
-  const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
-  const onToggle = () => setCollapsed((value) => !value);
+    const onToggle = () => setCollapsed((value) => !value);
 
-  const sidebarItemsList = useSelector(getSidebarItems);
+    const sidebarItemsList = useSelector(getSidebarItems);
 
-  const itemList = useMemo(() => sidebarItemsList.map((item) => (
-    <Sidebaritem item={item} key={item.path} collapsed={collapsed} />
-  )), [collapsed, sidebarItemsList]);
+    const itemList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <Sidebaritem
+                    item={item}
+                    key={item.path}
+                    collapsed={collapsed}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    );
 
-  return (
-    <aside
-      data-testid="sidebar"
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
-        className,
-      ])}
-    >
-      <Button
-        data-testid="sidebar-toggle"
-        onClick={onToggle}
-        className={cls.collapseBtn}
-        theme={ButtonTheme.BACKGROUND_INVERTED}
-        size={ButtonSize.L}
-        square
-      >
-        {collapsed ? '>' : '<'}
-      </Button>
+    return (
+        <aside
+            data-testid="sidebar"
+            className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
+            <Button
+                data-testid="sidebar-toggle"
+                onClick={onToggle}
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                size={ButtonSize.L}
+                square
+            >
+                {collapsed ? '>' : '<'}
+            </Button>
 
-      <VStack role="navigation" gap="8" className={cls.items}>
-        {itemList}
-      </VStack>
+            <VStack role="navigation" gap="8" className={cls.items}>
+                {itemList}
+            </VStack>
 
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher className={cls.lang} short={collapsed} />
-      </div>
-    </aside>
-  );
+            <div className={cls.switchers}>
+                <ThemeSwitcher />
+                <LangSwitcher className={cls.lang} short={collapsed} />
+            </div>
+        </aside>
+    );
 });
 
 export { Sidebar };

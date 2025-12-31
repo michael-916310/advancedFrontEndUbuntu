@@ -8,12 +8,12 @@ import ProfilePage from './ProfilePage';
 import { Theme } from '@/shared/const/theme';
 
 const meta = {
-  title: 'pages/ProfilePage',
-  component: ProfilePage,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'fullscreen',
-  },
+    title: 'pages/ProfilePage',
+    component: ProfilePage,
+    parameters: {
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        layout: 'fullscreen',
+    },
 } satisfies Meta<typeof ProfilePage>;
 
 export default meta;
@@ -21,37 +21,42 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Light: Story = {
-  args: {},
+    args: {},
 };
-Light.decorators = [StoreDecorator({
-  profile: {
-    form: {
-      username: 'michael buranov',
-      age: 23,
-      country: Country.Russia,
-      currency: Currency.RUB,
-      city: 'Soshi',
-      avatar: AvatarImg,
-      first: 'michael',
-      lastname: 'buranov',
-    },
-  },
-})];
+Light.decorators = [
+    StoreDecorator({
+        profile: {
+            form: {
+                username: 'michael buranov',
+                age: 23,
+                country: Country.Russia,
+                currency: Currency.RUB,
+                city: 'Soshi',
+                avatar: AvatarImg,
+                first: 'michael',
+                lastname: 'buranov',
+            },
+        },
+    }),
+];
 
 export const Dark: Story = {
-  args: {},
+    args: {},
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-  profile: {
-    form: {
-      username: 'michael buranov',
-      age: 23,
-      country: Country.Russia,
-      currency: Currency.RUB,
-      city: 'Soshi',
-      avatar: AvatarImg,
-      first: 'michael',
-      lastname: 'buranov',
-    },
-  },
-})];
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            form: {
+                username: 'michael buranov',
+                age: 23,
+                country: Country.Russia,
+                currency: Currency.RUB,
+                city: 'Soshi',
+                avatar: AvatarImg,
+                first: 'michael',
+                lastname: 'buranov',
+            },
+        },
+    }),
+];

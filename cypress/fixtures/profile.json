@@ -1,10 +1,10 @@
 {
-  "id": "1",
-  "first": "test sypress",
-  "lastname": "user",
-  "age": 22,
-  "currency": "RUB",
-  "country": "Russia",
-  "city": "Moscow-2",
-  "username": "test sypress"
+    "id": "1",
+    "first": "test sypress",
+    "lastname": "user",
+    "age": 22,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Moscow-2",
+    "username": "test sypress"
 }

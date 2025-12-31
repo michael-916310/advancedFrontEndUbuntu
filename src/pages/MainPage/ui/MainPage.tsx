@@ -4,14 +4,14 @@ import { Page } from '@/widgets/Page';
 import { Counter } from '@/entities/Counter';
 
 function MainPage() {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  return (
-    <Page data-testid="MainPage">
-      <Counter />
-      {t('Главная страница')}
-    </Page>
-  );
+    return (
+        <Page data-testid="MainPage">
+            <Counter />
+            {t('Главная страница')}
+        </Page>
+    );
 }
 
 export default MainPage;

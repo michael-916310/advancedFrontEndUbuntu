@@ -1,26 +1,26 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "es5",
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "strict": true,
-    "moduleResolution": "node",
-    // для абсолютного импорта
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "isolatedModules": true
-  },
-  "exclude": ["cypress"],
-  "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "strict": true,
+        "moduleResolution": "node",
+        // для абсолютного импорта
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "isolatedModules": true
+    },
+    "exclude": ["cypress"],
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
     }
-  }
 }

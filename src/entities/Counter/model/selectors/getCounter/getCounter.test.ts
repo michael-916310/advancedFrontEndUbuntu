@@ -6,10 +6,10 @@ import { getCounter } from './getCounter';
 import '@testing-library/jest-dom';
 
 describe('getCounter', () => {
-  test('should return counter number', () => {
-    const state: DeepPartial<StateSchema> = {
-      counter: { value: 10 },
-    };
-    expect(getCounter(state as StateSchema)).toEqual({ value: 10 });
-  });
+    test('should return counter number', () => {
+        const state: DeepPartial<StateSchema> = {
+            counter: { value: 10 },
+        };
+        expect(getCounter(state as StateSchema)).toEqual({ value: 10 });
+    });
 });

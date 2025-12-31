@@ -8,21 +8,21 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Theme } from '@/shared/const/theme';
 
 interface ThemeSwitcherProps {
-  className?: string;
+    className?: string;
 }
 
 const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
-  const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
-  return (
-    <Button
-      theme={ButtonTheme.CLEAR}
-      className={classNames('', {}, [className])}
-      onClick={toggleTheme}
-    >
-      {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
-    </Button>
-  );
+    return (
+        <Button
+            theme={ButtonTheme.CLEAR}
+            className={classNames('', {}, [className])}
+            onClick={toggleTheme}
+        >
+            {theme === Theme.DARK ? <DarkIcon /> : <LightIcon />}
+        </Button>
+    );
 });
 
 export { ThemeSwitcher };

@@ -9,52 +9,54 @@ import { ValidationProfileError } from '../../../model/consts/consts';
 import '@testing-library/jest-dom';
 
 const data = {
-  username: 'michael buranov',
-  age: 23,
-  country: Country.Russia,
-  currency: Currency.RUB,
-  city: 'Soshi',
-  first: 'michael',
-  lastname: 'buranov',
+    username: 'michael buranov',
+    age: 23,
+    country: Country.Russia,
+    currency: Currency.RUB,
+    city: 'Soshi',
+    first: 'michael',
+    lastname: 'buranov',
 };
 
 describe('./updateProfileData.test', () => {
-  test('Success', async () => {
-    const thunk = new TestAsyncThank(updateProfileData, {
-      profile: {
-        form: data,
-      },
+    test('Success', async () => {
+        const thunk = new TestAsyncThank(updateProfileData, {
+            profile: {
+                form: data,
+            },
+        });
+        thunk.api.put.mockReturnValue(Promise.resolve({ data }));
+        const result = await thunk.callThunk();
+
+        expect(thunk.api.put).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('fulfilled');
+        expect(result.payload).toEqual(data);
     });
-    thunk.api.put.mockReturnValue(Promise.resolve({ data }));
-    const result = await thunk.callThunk();
 
-    expect(thunk.api.put).toHaveBeenCalled();
-    expect(result.meta.requestStatus).toBe('fulfilled');
-    expect(result.payload).toEqual(data);
-  });
+    test('Server error', async () => {
+        const thunk = new TestAsyncThank(updateProfileData, {
+            profile: {
+                form: data,
+            },
+        });
+        thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
+        const result = await thunk.callThunk();
 
-  test('Server error', async () => {
-    const thunk = new TestAsyncThank(updateProfileData, {
-      profile: {
-        form: data,
-      },
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(result.payload).toEqual([ValidationProfileError.SERVER_ERROR]);
     });
-    thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
-    const result = await thunk.callThunk();
 
-    expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([ValidationProfileError.SERVER_ERROR]);
-  });
+    test('Validate error', async () => {
+        const thunk = new TestAsyncThank(updateProfileData, {
+            profile: {
+                form: { ...data, lastname: '' },
+            },
+        });
+        const result = await thunk.callThunk();
 
-  test('Validate error', async () => {
-    const thunk = new TestAsyncThank(updateProfileData, {
-      profile: {
-        form: { ...data, lastname: '' },
-      },
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(result.payload).toEqual([
+            ValidationProfileError.INCORRECT_USER_DATA,
+        ]);
     });
-    const result = await thunk.callThunk();
-
-    expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toEqual([ValidationProfileError.INCORRECT_USER_DATA]);
-  });
 });
