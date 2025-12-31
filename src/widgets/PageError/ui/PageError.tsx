@@ -4,29 +4,25 @@ import { Button } from '@/shared/ui/Button';
 import cls from './PageError.module.scss';
 
 interface PageErrorProps {
-    className?: string
+    className?: string;
 }
 
 const PageError = ({ className }: PageErrorProps) => {
-  const { t } = useTranslation();
+    const { t } = useTranslation();
 
-  const reloadPage = () => {
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
-  };
+    const reloadPage = () => {
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+    };
 
-  return (
-    <div className={classNames(cls.PageError, {}, [className])}>
-      <p>
-        {t('Произошла непредвиденная ошибка')}
-      </p>
-      <p>
-        <Button onClick={reloadPage}>
-          {t('Обновить страницу')}
-        </Button>
-      </p>
-    </div>
-  );
+    return (
+        <div className={classNames(cls.PageError, {}, [className])}>
+            <p>{t('Произошла непредвиденная ошибка')}</p>
+            <p>
+                <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
+            </p>
+        </div>
+    );
 };
 
 export { PageError };

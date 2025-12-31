@@ -3,21 +3,19 @@ import { useParams } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
 
 interface ArticleEditPageProps {
-  className?: string;
+    className?: string;
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-  const { className } = props;
-  const { id } = useParams<{ id: string }>();
-  const isEdit = Boolean(id);
+    const { className } = props;
+    const { id } = useParams<{ id: string }>();
+    const isEdit = Boolean(id);
 
-  return (
-    <Page
-      className={className}
-    >
-      {isEdit ? `Редактирование id:${id}` : 'Создание'}
-    </Page>
-  );
+    return (
+        <Page className={className}>
+            {isEdit ? `Редактирование id:${id}` : 'Создание'}
+        </Page>
+    );
 });
 
 export default ArticleEditPage;

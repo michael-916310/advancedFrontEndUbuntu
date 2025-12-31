@@ -3,7 +3,10 @@
 import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -16,37 +19,37 @@ import { ArticleInfiniteList } from '../../ui/ArticleInfiniteList/ArticleInfinit
 import { Page } from '@/widgets/Page';
 
 interface ArticlesPageProps {
-  className?: string;
+    className?: string;
 }
 
 const reducers: ReducerList = {
-  articlePage: articlesPageReducer,
+    articlePage: articlesPageReducer,
 };
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
-  const dispatch = useAppDispatch();
-  const [searchParams] = useSearchParams();
+    const dispatch = useAppDispatch();
+    const [searchParams] = useSearchParams();
 
-  const onLoadNextPage = useCallback(() => {
-    dispatch(fetchNextArticlePage());
-  }, [dispatch]);
+    const onLoadNextPage = useCallback(() => {
+        dispatch(fetchNextArticlePage());
+    }, [dispatch]);
 
-  useInitialEffect(() => {
-    dispatch(initArticlePage(searchParams));
-  });
+    useInitialEffect(() => {
+        dispatch(initArticlePage(searchParams));
+    });
 
-  return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        className={classNames(cls.ArticlesPage, {}, [className])}
-        data-testid="ArticlesPage"
-        onScrollEnd={onLoadNextPage}
-      >
-        <ArticlesPageFilters />
-        <ArticleInfiniteList className={cls.list} />
-      </Page>
-    </DynamicModuleLoader>
-  );
+    return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+            <Page
+                className={classNames(cls.ArticlesPage, {}, [className])}
+                data-testid="ArticlesPage"
+                onScrollEnd={onLoadNextPage}
+            >
+                <ArticlesPageFilters />
+                <ArticleInfiniteList className={cls.list} />
+            </Page>
+        </DynamicModuleLoader>
+    );
 };
 
 export default memo(ArticlesPage);

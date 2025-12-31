@@ -12,11 +12,11 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { fetchArticlesList } from '../../model/service/fetchArticleList/fetchArticleList';
 import { articlesPageActions } from '../../model/slice/acticlesPageSlice';
 import {
-  getArticlePageOrder,
-  getArticlePageSearch,
-  getArticlePageSort,
-  getArticlePageType,
-  getArticlePageView,
+    getArticlePageOrder,
+    getArticlePageSearch,
+    getArticlePageSort,
+    getArticlePageType,
+    getArticlePageView,
 } from '../../model/selectors/getArticlePageSelector';
 
 import cls from './ArticlesPageFilters.module.scss';
@@ -25,72 +25,91 @@ import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 
 interface ArticlesPageProps {
-  className?: string;
+    className?: string;
 }
 
 export const ArticlesPageFilters = memo(({ className }: ArticlesPageProps) => {
-  const { t } = useTranslation();
-  const dispatch = useAppDispatch();
+    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
 
-  const view = useSelector(getArticlePageView);
-  const sort = useSelector(getArticlePageSort);
-  const order = useSelector(getArticlePageOrder);
-  const search = useSelector(getArticlePageSearch);
-  const type = useSelector(getArticlePageType);
+    const view = useSelector(getArticlePageView);
+    const sort = useSelector(getArticlePageSort);
+    const order = useSelector(getArticlePageOrder);
+    const search = useSelector(getArticlePageSearch);
+    const type = useSelector(getArticlePageType);
 
-  const fetchData = useCallback(() => {
-    dispatch(fetchArticlesList({ replace: true }));
-  }, [dispatch]);
+    const fetchData = useCallback(() => {
+        dispatch(fetchArticlesList({ replace: true }));
+    }, [dispatch]);
 
-  const debouncedFetchData = useDebounce(fetchData, 500);
+    const debouncedFetchData = useDebounce(fetchData, 500);
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view));
-  }, [dispatch]);
+    const onChangeView = useCallback(
+        (view: ArticleView) => {
+            dispatch(articlesPageActions.setView(view));
+        },
+        [dispatch],
+    );
 
-  const onChangeOrder = useCallback((value: SortOrder) => {
-    dispatch(articlesPageActions.setOrder(value));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+    const onChangeOrder = useCallback(
+        (value: SortOrder) => {
+            dispatch(articlesPageActions.setOrder(value));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-  const onChangeSort = useCallback((value: ArticleSortField) => {
-    dispatch(articlesPageActions.setSort(value));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+    const onChangeSort = useCallback(
+        (value: ArticleSortField) => {
+            dispatch(articlesPageActions.setSort(value));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-  const onChangeSearch = useCallback((value: string) => {
-    dispatch(articlesPageActions.setSearch(value));
-    dispatch(articlesPageActions.setPage(1));
-    debouncedFetchData();
-  }, [dispatch, debouncedFetchData]);
+    const onChangeSearch = useCallback(
+        (value: string) => {
+            dispatch(articlesPageActions.setSearch(value));
+            dispatch(articlesPageActions.setPage(1));
+            debouncedFetchData();
+        },
+        [dispatch, debouncedFetchData],
+    );
 
-  const onChangeType = useCallback((value: ArticleType) => {
-    dispatch(articlesPageActions.setType(value));
-    dispatch(articlesPageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+    const onChangeType = useCallback(
+        (value: ArticleType) => {
+            dispatch(articlesPageActions.setType(value));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-  return (
-    <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
-      <div className={cls.sortWrapper}>
-        <ArticleSortSelector
-          order={order}
-          sort={sort}
-          onChangeOrder={onChangeOrder}
-          onChangeSort={onChangeSort}
-        />
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
-      <Card className={cls.search}>
-        <Input
-          placeholder={t('Поиск')}
-          onChange={onChangeSearch}
-          value={search}
-        />
-      </Card>
-      <ArticleTypeTabs className={cls.tabs} value={type} onChangeType={onChangeType} />
-    </div>
-  );
+    return (
+        <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
+            <div className={cls.sortWrapper}>
+                <ArticleSortSelector
+                    order={order}
+                    sort={sort}
+                    onChangeOrder={onChangeOrder}
+                    onChangeSort={onChangeSort}
+                />
+                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+            </div>
+            <Card className={cls.search}>
+                <Input
+                    placeholder={t('Поиск')}
+                    onChange={onChangeSearch}
+                    value={search}
+                />
+            </Card>
+            <ArticleTypeTabs
+                className={cls.tabs}
+                value={type}
+                onChangeType={onChangeType}
+            />
+        </div>
+    );
 });

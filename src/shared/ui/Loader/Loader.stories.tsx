@@ -4,12 +4,12 @@ import { Loader } from './Loader';
 import { Theme } from '@/shared/const/theme';
 
 const meta = {
-  title: 'shared/Loader',
-  component: Loader,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
+    title: 'shared/Loader',
+    component: Loader,
+    parameters: {
+        // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
+        layout: 'centered',
+    },
 } satisfies Meta<typeof Loader>;
 
 export default meta;
@@ -17,10 +17,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Clear: Story = {
-  args: {},
+    args: {},
 };
 
 export const OutlineDark: Story = {
-  args: {},
+    args: {},
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];

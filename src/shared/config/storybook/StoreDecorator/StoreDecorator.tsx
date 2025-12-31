@@ -10,19 +10,24 @@ import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slic
 import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
 
 const defaultAsyncReducers: DeepPartial<ReducerList> = {
-  loginForm: loginReducer,
-  profile: profileReducer,
-  articleDetails: articleDetailsReducer,
-  addCommentForm: addCommentFormReducer,
-  articleDetailsPage: articleDetailsPageReducer,
+    loginForm: loginReducer,
+    profile: profileReducer,
+    articleDetails: articleDetailsReducer,
+    addCommentForm: addCommentFormReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 // eslint-disable-next-line max-len
-export const StoreDecorator = (state: DeepPartial<StateSchema>, asyncReducers?: DeepPartial<ReducerList>) => (StoryToWrap: StoryFn) => (
-  <StoreProvider
-    initialState={state as StateSchema}
-    asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
-  >
-    <StoryToWrap />
-  </StoreProvider>
-);
+export const StoreDecorator =
+    (
+        state: DeepPartial<StateSchema>,
+        asyncReducers?: DeepPartial<ReducerList>,
+    ) =>
+    (StoryToWrap: StoryFn) => (
+        <StoreProvider
+            initialState={state as StateSchema}
+            asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}
+        >
+            <StoryToWrap />
+        </StoreProvider>
+    );

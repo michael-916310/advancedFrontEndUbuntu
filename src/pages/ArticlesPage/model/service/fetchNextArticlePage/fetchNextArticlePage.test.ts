@@ -8,39 +8,39 @@ import '@testing-library/jest-dom';
 jest.mock('../fetchArticleList/fetchArticleList');
 
 describe('./fetchNextArticlePage.test', () => {
-  test('Success', async () => {
-    const thunk = new TestAsyncThank(fetchNextArticlePage, {
-      articlePage: {
-        page: 2,
-        ids: [],
-        entities: {},
-        limit: 5,
-        isLoading: false,
-        hasMore: true,
-      },
+    test('Success', async () => {
+        const thunk = new TestAsyncThank(fetchNextArticlePage, {
+            articlePage: {
+                page: 2,
+                ids: [],
+                entities: {},
+                limit: 5,
+                isLoading: false,
+                hasMore: true,
+            },
+        });
+
+        await thunk.callThunk();
+
+        expect(thunk.dispatch).toBeCalledTimes(4);
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
-    await thunk.callThunk();
+    test('No call', async () => {
+        const thunk = new TestAsyncThank(fetchNextArticlePage, {
+            articlePage: {
+                page: 2,
+                ids: [],
+                entities: {},
+                limit: 5,
+                isLoading: false,
+                hasMore: false,
+            },
+        });
 
-    expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlesList).toHaveBeenCalled();
-  });
+        await thunk.callThunk();
 
-  test('No call', async () => {
-    const thunk = new TestAsyncThank(fetchNextArticlePage, {
-      articlePage: {
-        page: 2,
-        ids: [],
-        entities: {},
-        limit: 5,
-        isLoading: false,
-        hasMore: false,
-      },
+        expect(thunk.dispatch).toBeCalledTimes(2);
+        expect(fetchArticlesList).not.toHaveBeenCalled();
     });
-
-    await thunk.callThunk();
-
-    expect(thunk.dispatch).toBeCalledTimes(2);
-    expect(fetchArticlesList).not.toHaveBeenCalled();
-  });
 });

@@ -8,39 +8,40 @@ import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>,
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
-  const rootReducer: ReducersMapObject<StateSchema> = {
-    ...asyncReducers,
-    counter: counterReducer,
-    user: userReducer,
-    ui: uiReducer,
-    [rtkApi.reducerPath]: rtkApi.reducer,
-  };
+    const rootReducer: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
+        counter: counterReducer,
+        user: userReducer,
+        ui: uiReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
+    };
 
-  const reducerManager = createReducerManager(rootReducer);
+    const reducerManager = createReducerManager(rootReducer);
 
-  const extraArg: ThunkExtraArg = {
-    api: $api,
-  };
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+    };
 
-  const store = configureStore({
+    const store = configureStore({
+        // @ts-ignore
+        reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
+        devTools: __IS_DEV__,
+        preloadedState: initialState,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: extraArg,
+                },
+            }).concat(rtkApi.middleware),
+    });
+
     // @ts-ignore
-    reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
-    devTools: __IS_DEV__,
-    preloadedState: initialState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: extraArg,
-      },
-    }).concat(rtkApi.middleware),
-  });
+    store.reducerManager = reducerManager;
 
-  // @ts-ignore
-  store.reducerManager = reducerManager;
-
-  return store;
+    return store;
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
