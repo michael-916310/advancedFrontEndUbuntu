@@ -776,6 +776,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://s.digitalocean.ru/upload/1686292039_1650919998_d091d18bd181d182d180d0bed0b2_d0a5d0b0d0bad0b5d180.jpg"
     },
     {
@@ -785,6 +789,10 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048_break.jpg.break"
     },
     {
@@ -794,6 +802,10 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      },
       "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
     },
     {
@@ -803,6 +815,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048.jpg"
     }
   ],

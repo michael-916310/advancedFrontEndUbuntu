@@ -17,6 +17,8 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { fetchCommentByArticleId } from '../../model/services/fetchCommentByArticleId/fetchCommentByArticleId';
 import { ArticleRating } from '@/features/articleRaiting';
 import { Page } from '@/widgets/Page';
+import { getFeatureFlag } from '@/shared/lib/features';
+import { Counter } from '@/entities/Counter';
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer,
@@ -30,6 +32,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
+
+    const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
+    const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
     useInitialEffect(() => {
         dispatch(fetchCommentByArticleId(id));
@@ -45,7 +50,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    {isCounterEnabled && <Counter />}
+                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
