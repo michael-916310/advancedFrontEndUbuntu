@@ -18,16 +18,19 @@ const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({
     children,
     initialTheme,
 }) => {
-    const { theme: settingsTheme } = useJsonSettings();
-    const [theme, setTheme] = useState<Theme | undefined>(initialTheme);
-    const [ininted, setInited] = useState(false);
+    const { theme: defaultTheme } = useJsonSettings();
+    const [isThemeInited, setThemeInited] = useState(false);
+
+    const [theme, setTheme] = useState<Theme>(
+        initialTheme || defaultTheme || Theme.LIGHT,
+    );
 
     useEffect(() => {
-        if (!ininted && settingsTheme) {
-            setTheme(settingsTheme);
-            setInited(true);
+        if (!isThemeInited && defaultTheme) {
+            setTheme(defaultTheme);
+            setThemeInited(true);
         }
-    }, [settingsTheme, ininted]);
+    }, [defaultTheme, isThemeInited]);
 
     const defaultProps = useMemo(
         () => ({

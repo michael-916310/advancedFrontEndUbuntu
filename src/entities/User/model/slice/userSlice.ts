@@ -4,6 +4,7 @@ import { User, UserSchema } from '../types/user';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { saveJsonSettings } from '@/entities/User/model/services/saveJsonSettings';
 import { JsonSettings } from '@/entities/User/model/types/jsonSettings';
+import { initAuthData } from '../services/initAuthData';
 
 const initialState: UserSchema = {
     _mounted: false,
@@ -16,15 +17,7 @@ export const userSlice = createSlice({
         setAuthData: (state, action: PayloadAction<User>) => {
             state.authData = action.payload;
             setFeatureFlags(action.payload.features);
-        },
-        initAuthData: (state) => {
-            const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
-            if (user) {
-                const fromJson = JSON.parse(user) as User;
-                state.authData = fromJson;
-                setFeatureFlags(fromJson.features);
-            }
-            state._mounted = true;
+            localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id);
         },
         logout: (state) => {
             state.authData = undefined;
@@ -40,6 +33,17 @@ export const userSlice = createSlice({
                 }
             },
         );
+        builder.addCase(
+            initAuthData.fulfilled,
+            (state, { payload }: PayloadAction<User>) => {
+                state.authData = payload;
+                setFeatureFlags(payload.features);
+                state._mounted = true;
+            },
+        );
+        builder.addCase(initAuthData.rejected, (state) => {
+            state._mounted = true;
+        });
     },
 });
 
