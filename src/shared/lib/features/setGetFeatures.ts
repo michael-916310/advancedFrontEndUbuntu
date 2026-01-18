@@ -9,5 +9,5 @@ export function setFeatureFlags(value?: FeaturesFlags) {
 }
 
 export function getFeatureFlag(flag: keyof FeaturesFlags) {
-    return featuresFlags[flag];
+    return featuresFlags ? featuresFlags[flag] : false;
 }
