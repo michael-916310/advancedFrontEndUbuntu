@@ -1,11 +1,11 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
-import { Modal } from '@/shared/ui/Modal';
-import { Text } from '@/shared/ui/Text';
+import { Modal } from '@/shared/ui/deprecated/Modal';
+import { Text } from '@/shared/ui/deprecated/Text';
 import { useJsonSettings } from '@/entities/User/model/selectors/jsonSettings';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { saveJsonSettings } from '@/entities/User';
-import { Drawer } from '@/shared/ui/Drawer';
+import { Drawer } from '@/shared/ui/deprecated/Drawer';
 
 interface ArticlePageGreetingProps {
     className?: string;

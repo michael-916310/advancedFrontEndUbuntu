@@ -5,8 +5,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Input } from '@/shared/ui/Input';
-import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { Card } from '@/shared/ui/deprecated/Card';
 import { SortOrder } from '@/shared/types/sort';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { fetchArticlesList } from '../../model/service/fetchArticleList/fetchArticleList';

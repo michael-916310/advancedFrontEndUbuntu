@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react';
-import { ListBox } from '@/shared/ui/Popups';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
 import { Currency } from '../../model/types/currency';
 
 const options = [
