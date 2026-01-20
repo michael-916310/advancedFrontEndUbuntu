@@ -4,10 +4,25 @@ import { buildCssLoader } from './loaders/buildCssLoader';
 import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function BuildLoaders(options: BuildOptions): RuleSetRule[] {
-  const svgLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  };
+    const svgLoader = {
+        test: /\.svg$/,
+        use: [{
+            loader: '@svgr/webpack',
+            options: {
+                icon: true,
+                svgoConfig: {
+                    plugins: [
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true,
+                            },
+                        },
+                    ],
+                },
+            },
+        }],
+    };
 
   const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
   const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
