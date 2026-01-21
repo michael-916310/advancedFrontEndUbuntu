@@ -8,9 +8,6 @@ interface OverlayProps {
     onClick?: () => void;
 }
 
-/**
- *  @deprecated
- */
 export const Overlay: FC<OverlayProps> = (props) => {
     const { className, onClick } = props;
 

@@ -28,9 +28,6 @@ interface ListBoxProps {
     label?: string;
 }
 
-/**
- *  @deprecated
- */
 export function ListBox(props: ListBoxProps) {
     const {
         className,
@@ -72,7 +69,7 @@ export function ListBox(props: ListBoxProps) {
                 </ListboxButton>
                 <ListboxOptions
                     anchor={direction}
-                    className={classNames(cls.options, {}, [])}
+                    className={classNames(cls.options, {}, [popupCls.menu])}
                 >
                     {items?.map((item) => (
                         <ListboxOption

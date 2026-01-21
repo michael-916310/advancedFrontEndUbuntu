@@ -3,27 +3,17 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 import { AppImage } from '../../redesigned/AppImage';
 import UserIcon from '../../../assets/icons/user-filled.svg';
-import { Icon } from '../../deprecated/Icon';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Icon } from '../Icon';
+import { Skeleton } from '../Skeleton';
 
 interface AvatarProps {
     alt?: string;
     className?: string;
-    fallbackInverted?: boolean;
     src?: string;
     size?: number;
 }
 
-/**
- *  @deprecated
- */
-const Avatar = ({
-    alt,
-    className,
-    fallbackInverted,
-    src,
-    size = 100,
-}: AvatarProps) => {
+const Avatar = ({ alt, className, src, size = 100 }: AvatarProps) => {
     const mods: Mods = {};
 
     const styles = useMemo<CSSProperties>(
@@ -35,14 +25,7 @@ const Avatar = ({
     );
 
     const fallback = <Skeleton width={size} height={size} border="50%" />;
-    const errorFallback = (
-        <Icon
-            inverted={fallbackInverted}
-            Svg={UserIcon}
-            width={size}
-            height={size}
-        />
-    );
+    const errorFallback = <Icon Svg={UserIcon} width={size} height={size} />;
 
     return (
         <AppImage
