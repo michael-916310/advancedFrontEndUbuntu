@@ -47,7 +47,7 @@ const Sidebar = memo(({ className }: SidebarProps) => {
                     data-testid="sidebar"
                     className={classNames(
                         cls.SidebarRedesigned,
-                        { [cls.collapsed]: collapsed },
+                        { [cls.collapsedRedesigned]: collapsed },
                         [className],
                     )}
                 >
@@ -65,6 +65,10 @@ const Sidebar = memo(({ className }: SidebarProps) => {
                         className={cls.collapseBtn}
                         Svg={ArrowIcon}
                     />
+                    <div className={cls.switchers}>
+                        <ThemeSwitcher />
+                        <LangSwitcher className={cls.lang} short={collapsed} />
+                    </div>
                 </aside>
             }
             off={

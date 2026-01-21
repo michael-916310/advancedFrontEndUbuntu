@@ -32,9 +32,10 @@ const Sidebaritem = memo(({ item, collapsed }: SidebaritemProps) => {
             on={
                 <AppLink
                     to={item.path}
-                    className={classNames(cls.item, {
-                        [cls.collapsed]: collapsed,
+                    className={classNames(cls.itemRedesigned, {
+                        [cls.collapsedRedesigned]: collapsed,
                     })}
+                    activeClassName={cls.active}
                 >
                     <Icon Svg={item.Icon} height={32} width={32} />
                     <span className={cls.link}>{t(item.text)}</span>
