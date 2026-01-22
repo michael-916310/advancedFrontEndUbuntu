@@ -11,7 +11,7 @@
   z-index: 10000;
   background-color: var(--dark-bg-redesigned);
   border-radius: 12px;
-  box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
+  //box-shadow: 4px 4px 8px var(--dark-bg-redesigned);
 }
 
 .item {
@@ -22,14 +22,20 @@
   display: inline-block;
   pointer-events: auto;
   cursor: pointer;
-  color: var(--primary-color);
-  padding: 6px 15px;
-  border: 1px solid var(--primary-color);
-  background: none;
+  background: var(--light-bg-redesigned);
+  border: none;
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 34px;
+  color: var(--text-redesigned);
 
   &:hover {
     opacity: 0.8;
     fill-opacity: 0.8;
     stroke-opacity: 0.8;
   }
+}
+
+.selected {
+  background: var(--light-bg-redesigned);
 }

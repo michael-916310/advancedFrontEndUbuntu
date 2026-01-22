@@ -4,31 +4,31 @@ import {
     ListboxOption,
     ListboxOptions,
 } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/redesigned/Stack/HStack/HStack';
 import cls from './ListBox.module.scss';
 import { DropdownDirection } from '../../../../../types/ui';
 import popupCls from '../../styles/popup.module.scss';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
     value: string;
     content: ReactNode;
     disabled?: boolean;
 }
 
-interface ListBoxProps {
-    items?: Array<ListBoxItem>;
+interface ListBoxProps<T extends string> {
+    items?: Array<ListBoxItem<T>>;
     className?: string;
-    value?: string;
+    value?: T;
     defaultValue?: string;
-    onChange: (value: string) => void;
+    onChange: (value: T) => void;
     readonly?: boolean;
     direction?: DropdownDirection;
     label?: string;
 }
 
-export function ListBox(props: ListBoxProps) {
+export function ListBox<T extends string>(props: ListBoxProps<T>) {
     const {
         className,
         defaultValue,
@@ -39,6 +39,11 @@ export function ListBox(props: ListBoxProps) {
         readonly,
         label,
     } = props;
+
+    const selectedItem = useMemo(
+        () => items?.find((item) => item.value === value),
+        [items, value],
+    );
 
     return (
         <HStack gap="4">
@@ -64,7 +69,7 @@ export function ListBox(props: ListBoxProps) {
                             [],
                         )}
                     >
-                        {value ?? defaultValue}
+                        {selectedItem?.content ?? defaultValue}
                     </span>
                 </ListboxButton>
                 <ListboxOptions
@@ -83,9 +88,9 @@ export function ListBox(props: ListBoxProps) {
                                     className={classNames(cls.item, {
                                         [popupCls.active]: active,
                                         [popupCls.disabled]: item.disabled,
+                                        [popupCls.selected]: selected,
                                     })}
                                 >
-                                    {selected && '!!!'}
                                     {item.content}
                                 </li>
                             )}

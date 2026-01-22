@@ -1,15 +1,13 @@
 import { expect } from '@jest/globals';
+import { fetchNextArticlesPage } from './fetchNextArticlesPage';
+import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { TestAsyncThank } from '@/shared/lib/tests/TestAsyncThank/TestAsyncThank';
-import { fetchArticlesList } from '../fetchArticleList/fetchArticleList';
-import { fetchNextArticlePage } from './fetchNextArticlePage';
 
-import '@testing-library/jest-dom';
+jest.mock('../fetchArticlesList/fetchArticlesList');
 
-jest.mock('../fetchArticleList/fetchArticleList');
-
-describe('./fetchNextArticlePage.test', () => {
-    test('Success', async () => {
-        const thunk = new TestAsyncThank(fetchNextArticlePage, {
+describe('fetchNextArticlesPage.test', () => {
+    test('success', async () => {
+        const thunk = new TestAsyncThank(fetchNextArticlesPage, {
             articlePage: {
                 page: 2,
                 ids: [],
@@ -25,9 +23,8 @@ describe('./fetchNextArticlePage.test', () => {
         expect(thunk.dispatch).toHaveBeenCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalled();
     });
-
-    test('No call', async () => {
-        const thunk = new TestAsyncThank(fetchNextArticlePage, {
+    test('fetchAritcleList not called', async () => {
+        const thunk = new TestAsyncThank(fetchNextArticlesPage, {
             articlePage: {
                 page: 2,
                 ids: [],
