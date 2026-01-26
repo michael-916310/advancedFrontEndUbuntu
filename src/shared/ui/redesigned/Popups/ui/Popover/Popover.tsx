@@ -3,13 +3,13 @@ import {
     PopoverButton,
     PopoverPanel,
 } from '@headlessui/react';
-import { memo, ReactNode, useEffect, useState } from 'react';
+import { memo, ReactNode, useState } from 'react';
 import { DropdownDirection } from '@/shared/types/ui';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import popupCls from '../../styles/popup.module.scss';
 import cls from './Popover.module.scss';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { usePortalTheme } from '@/shared/ui/redesigned/Popups/hooks/usePortalTheme';
 
 interface PopoverProps {
     className?: string;
@@ -22,16 +22,7 @@ export const Popover = memo((props: PopoverProps) => {
     const { children, className, direction = 'bottom start', trigger } = props;
     const [isOpen, setIsOpen] = useState(false);
 
-    const { theme } = useTheme();
-
-    useEffect(() => {
-        if (isOpen && theme) {
-            const portal = document.querySelector('#headlessui-portal-root');
-            if (portal) {
-                portal.classList.add(theme);
-            }
-        }
-    }, [isOpen, theme]);
+    usePortalTheme(isOpen);
 
     return (
         <HPopover

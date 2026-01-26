@@ -1,5 +1,5 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { DropdownDirection } from '@/shared/types/ui';
@@ -7,6 +7,7 @@ import { AppLink } from '@/shared/ui/deprecated/AppLink/AppLink';
 
 import cls from './Dropdown.module.scss';
 import popupCls from '../../styles/popup.module.scss';
+import { usePortalTheme } from '@/shared/ui/redesigned/Popups/hooks/usePortalTheme';
 
 export interface DropdownItem {
     content?: ReactNode;
@@ -24,6 +25,11 @@ interface DropdownProps {
 
 export function Dropdown(props: DropdownProps) {
     const { className, direction = 'bottom start', trigger, items } = props;
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    usePortalTheme(isOpen);
+
     return (
         <Menu
             as="div"
@@ -32,47 +38,63 @@ export function Dropdown(props: DropdownProps) {
                 popupCls.popup,
             ])}
         >
-            <MenuButton className={popupCls.trigger}>{trigger}</MenuButton>
-            <MenuItems
-                anchor={direction}
-                className={classNames(cls.menu, {}, [popupCls.menu])}
-            >
-                {items?.map((item, index) => {
-                    const content = ({ active }: { active: boolean }) => (
-                        <button
-                            className={classNames(cls.item, {
-                                [popupCls.active]: active,
+            {({ open }) => {
+                setIsOpen(open);
+
+                return (
+                    <>
+                        <MenuButton className={popupCls.trigger}>
+                            {trigger}
+                        </MenuButton>
+                        <MenuItems
+                            anchor={direction}
+                            className={classNames(cls.menu, {}, [
+                                popupCls.menu,
+                            ])}
+                        >
+                            {items?.map((item, index) => {
+                                const content = ({
+                                    active,
+                                }: {
+                                    active: boolean;
+                                }) => (
+                                    <button
+                                        className={classNames(cls.item, {
+                                            [popupCls.active]: active,
+                                        })}
+                                        disabled={item.disabled}
+                                        onClick={item?.onClick}
+                                        type="button"
+                                    >
+                                        {item.content}
+                                    </button>
+                                );
+                                if (item.href) {
+                                    return (
+                                        <MenuItem
+                                            as={AppLink}
+                                            to={item.href}
+                                            disabled={item.disabled}
+                                            key={`dropdown-key-${index}`}
+                                        >
+                                            {content}
+                                        </MenuItem>
+                                    );
+                                }
+                                return (
+                                    <MenuItem
+                                        as={Fragment}
+                                        disabled={item.disabled}
+                                        key={`dropdown-key-${index}`}
+                                    >
+                                        {content}
+                                    </MenuItem>
+                                );
                             })}
-                            disabled={item.disabled}
-                            onClick={item?.onClick}
-                            type="button"
-                        >
-                            {item.content}
-                        </button>
-                    );
-                    if (item.href) {
-                        return (
-                            <MenuItem
-                                as={AppLink}
-                                to={item.href}
-                                disabled={item.disabled}
-                                key={`dropdown-key-${index}`}
-                            >
-                                {content}
-                            </MenuItem>
-                        );
-                    }
-                    return (
-                        <MenuItem
-                            as={Fragment}
-                            disabled={item.disabled}
-                            key={`dropdown-key-${index}`}
-                        >
-                            {content}
-                        </MenuItem>
-                    );
-                })}
-            </MenuItems>
+                        </MenuItems>
+                    </>
+                );
+            }}
         </Menu>
     );
 }
