@@ -11,6 +11,8 @@ import cls from './ListBox.module.scss';
 import { DropdownDirection } from '../../../../../types/ui';
 import popupCls from '../../styles/popup.module.scss';
 import { usePortalTheme } from '@/shared/ui/redesigned/Popups/hooks/usePortalTheme';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 
 export interface ListBoxItem<T extends string> {
     value: string;
@@ -78,6 +80,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                                     )}
                                 >
                                     {selectedItem?.content ?? defaultValue}
+                                    <Icon
+                                        Svg={ArrowIcon}
+                                        height={24}
+                                        width={24}
+                                    />
                                 </span>
                             </ListboxButton>
                             <ListboxOptions
