@@ -1,6 +1,8 @@
 import { memo, useCallback } from 'react';
-import { ListBox } from '@/shared/ui/deprecated/Popups';
+import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Currency } from '../../model/types/currency';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { ListBox } from '@/shared/ui/redesigned/Popups';
 
 const options = [
     { value: Currency.RUB, content: Currency.RUB },
@@ -24,16 +26,22 @@ const CurrencySelect = memo(
             [onChange],
         );
 
+        const props = {
+            className,
+            defaultValue: 'Укажите вылюту',
+            label: 'Укажите вылюту',
+            items: options,
+            onChange: onHandleChange,
+            readonly: readOnly,
+            value,
+            direction: 'top start' as const,
+        };
+
         return (
-            <ListBox
-                className={className}
-                defaultValue="Укажите вылюту"
-                label="Укажите вылюту"
-                items={options}
-                onChange={onHandleChange}
-                readonly={readOnly}
-                value={value}
-                direction="top start"
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<ListBox {...props} />}
+                off={<ListBoxDeprecated {...props} />}
             />
         );
     },
