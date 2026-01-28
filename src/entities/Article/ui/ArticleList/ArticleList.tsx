@@ -8,6 +8,8 @@ import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticleView } from '../../model/consts/consts';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 const getSkeletons = (view: ArticleView) =>
     new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -52,20 +54,47 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div
-            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            data-testid="ArticleList"
-        >
-            {articles.map((article) => (
-                <ArticleListItem
-                    article={article}
-                    view={view}
-                    target={target}
-                    key={article.id}
-                    className={cls.card}
-                />
-            ))}
-            {isLoading && getSkeletons(view)}
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <HStack
+                    gap="16"
+                    wrap="wrap"
+                    className={classNames(cls.ArticleListRedesigned, {}, [])}
+                    data-testid="ArticleList"
+                >
+                    {articles.map((article) => (
+                        <ArticleListItem
+                            article={article}
+                            view={view}
+                            target={target}
+                            key={article.id}
+                            className={cls.card}
+                        />
+                    ))}
+                    {isLoading && getSkeletons(view)}
+                </HStack>
+            }
+            off={
+                <div
+                    className={classNames(cls.ArticleList, {}, [
+                        className,
+                        cls[view],
+                    ])}
+                    data-testid="ArticleList"
+                >
+                    {articles.map((article) => (
+                        <ArticleListItem
+                            article={article}
+                            view={view}
+                            target={target}
+                            key={article.id}
+                            className={cls.card}
+                        />
+                    ))}
+                    {isLoading && getSkeletons(view)}
+                </div>
+            }
+        />
     );
 });
