@@ -7,7 +7,7 @@ export const DetailsContainer: FC = () => {
     const { id } = useParams<{ id: string }>();
 
     return (
-        <Card max border="round" padding="24">
+        <Card max border="partial" padding="24">
             <ArticleDetails id={id} />
         </Card>
     );

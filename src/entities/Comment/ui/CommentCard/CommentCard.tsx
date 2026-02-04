@@ -33,7 +33,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <Card border="round" max padding="24">
+            <Card border="partial" max padding="24">
                 <VStack
                     data-testid="CommentCard.Loading"
                     gap="8"
@@ -65,7 +65,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
         <ToggleFeatures
             feature="isAppRedesigned"
             on={
-                <Card border="round" max padding="24">
+                <Card border="partial" max padding="24">
                     <VStack
                         data-testid="CommentCard.Content"
                         gap="16"

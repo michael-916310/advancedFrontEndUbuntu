@@ -68,7 +68,7 @@ export const ProfileCardRedesigned = (props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
 
     return (
-        <Card max className={className} padding="24">
+        <Card border="partial" max className={className} padding="24">
             <VStack gap="32">
                 {data?.avatar && (
                     <HStack justify="center" max>

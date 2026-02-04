@@ -208,7 +208,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
             feature="isAppRedesigned"
             on={
                 <CardRedesigned
-                    border="round"
+                    border="partial"
                     className={className}
                     data-testid="RatingCard"
                     fullHeight

@@ -54,7 +54,7 @@ export const ArticleViewSelector = memo(
                 feature="isAppRedesigned"
                 on={
                     <Card
-                        border="round"
+                        border="partial"
                         className={classNames(
                             cls.ArticleViewSelectorRedesigned,
                             {},

@@ -24,7 +24,7 @@ export const AdditionalInfoContainer: FC = () => {
     }
 
     return (
-        <Card border="round" className={cls.card} padding="24">
+        <Card border="partial" className={cls.card} padding="24">
             <ArticleAdditionalInfo
                 author={article.user}
                 createdAt={article.createdAt}
