@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Comment } from '../../model/types/comment';
 import { CommentCard } from '../CommentCard/CommentCard';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CommentListProps {
     className?: string;
@@ -35,7 +37,11 @@ const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
                     />
                 ))
             ) : (
-                <Text text={t('Комментарий отсутствует')} />
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={<Text text={t('Комментарий отсутствует')} />}
+                    off={<TextDeprecated text={t('Комментарий отсутствует')} />}
+                />
             )}
         </VStack>
     );

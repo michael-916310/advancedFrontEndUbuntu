@@ -14,9 +14,6 @@ interface ModalProps {
     lazy?: boolean;
 }
 
-/**
- *  @deprecated
- */
 const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     const { close, isClosing, isMounted } = useModal({
         isOpen,
