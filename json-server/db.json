@@ -789,7 +789,8 @@
       },
       "avatar": "https://s.digitalocean.ru/upload/1686292039_1650919998_d091d18bd181d182d180d0bed0b2_d0a5d0b0d0bad0b5d180.jpg",
       "jsonSettings": {
-        "isArticlesPageWasOpened": true
+        "isArticlesPageWasOpened": true,
+        "theme": "app_dark_theme"
       }
     },
     {
@@ -806,7 +807,7 @@
       "avatar": "https://s1.1zoom.me/big3/604/Raccoons_Closeup_Eyes_Snout_Glance_Whiskers_Nose_565212_2048x2048_break.jpg.break",
       "jsonSettings": {
         "isArticlesPageWasOpened": true,
-        "theme": "app_dark_theme"
+        "theme": "app_light_theme"
       }
     },
     {
