@@ -8,7 +8,6 @@ import React, {
 // eslint-disable-next-line max-len
 import { ThemeContext } from '@/shared/lib/context/ThemeContext';
 import { Theme } from '@/shared/const/theme';
-import { useJsonSettings } from '@/entities/User/model/selectors/jsonSettings';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 
 interface ThemeProviderProps {
@@ -21,7 +20,6 @@ const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({
     children,
     initialTheme,
 }) => {
-    const { theme: defaultTheme } = useJsonSettings();
     const [isThemeInited, setThemeInited] = useState(false);
 
     const [theme, setTheme] = useState<Theme>(
@@ -29,11 +27,11 @@ const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({
     );
 
     useEffect(() => {
-        if (!isThemeInited && defaultTheme) {
-            setTheme(defaultTheme);
+        if (!isThemeInited && initialTheme) {
+            setTheme(initialTheme);
             setThemeInited(true);
         }
-    }, [defaultTheme, isThemeInited, theme]);
+    }, [initialTheme, isThemeInited, theme]);
 
     useEffect(() => {
         document.body.className = theme;
